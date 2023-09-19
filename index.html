@@ -16,7 +16,6 @@
 	<link rel="icon" type="image/x-icon" href="./favicon.ico" sizes="96x96">
 	<script defer src="./src/js/scrool-banner.js"></script>
 	<script defer src="./src/js/botão-sandwish.js"></script>
-	<script defer src="./src/js/main.js"></script>
 </head>
 <!--BODY bg-gray-50-->
 
@@ -24,7 +23,8 @@
 	<!--Box navegação-->
 	<header class="relative py-1 tracking-wide sm:p-2 md:p-2 lg:px-8">
 		<!--Div criada para fins de alinhamento-->
-		<div class="flex sm:flex-wrap xs:space-y-1 xs:justify-between sm:space-y-1 sm:justify-between md:space-y-1 md:justify-between xl:max-w-4xl xl:mx-auto">
+		<div
+			class="flex sm:flex-wrap xs:space-y-1 xs:justify-between sm:space-y-1 sm:justify-between md:space-y-1 md:justify-between xl:max-w-4xl xl:mx-auto">
 			<!--Logo Tipografia-->
 			<figure class="flex-center space-x-3 order-1 basis-1/4 xl:basis-auto sm:basis-auto md:basis-auto">
 				<img src="./src/assets/background-pokeball.png" alt="Logo tipografia 'pokemon"
@@ -41,7 +41,7 @@
 				<li><a href="https://github.com/SamColt36" class="px-2 py-2 flex items-center" target="_blank">About</a>
 				</li>
 
-				<li id="exit" class="hidden px-2 py-2 xs:flex sm:flex md:flex items-center cursor-pointer">Close</li>
+				<li class="exit hidden px-2 py-2 xs:flex sm:flex md:flex items-center cursor-pointer">Close</li>
 			</ol>
 			<!--/Menu em forma de lista. Disponível para desktop-->
 
@@ -64,12 +64,11 @@
 
 			<!--Icon menu sandwish, disponível apenas em mobile-->
 			<button type="button"
-				class="order-2 xs:inline-block sm:inline-block md:inline-block lg:hidden xl:hidden p-2 mx-2 z-50"
-				id="btnSandwish">
+				class="btnSandwish order-2 xs:inline-block sm:inline-block md:inline-block lg:hidden xl:hidden p-2 mx-2 z-50">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
 					stroke="currentColor" class="w-7 h-7 text-white">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"
-						id="btnSandwishSvgPath" />
+						class="btnSandwishSvgPath" />
 				</svg>
 			</button>
 			<!--/Icon menu sandwish, disponível apenas em mobile-->
@@ -80,7 +79,7 @@
 
 	<!--Menu Suspenso para Mobile-->
 	<!--Essa tag <div> child serve para fins de alinhamento-->
-	<menuSuspenso class="fixed bottom-0 translate-y-full z-50 shadow-inner lg:hidden xl:hidden" id="menuSuspenso">
+	<menuSuspenso class="menuSuspenso fixed bottom-0 translate-y-full z-50 shadow-inner lg:hidden xl:hidden">
 		<!--Menu-->
 		<div class="flex flex-col items-end h-full rounded-t-xl bg-white">
 			<!--Linha com estilização-->
@@ -107,7 +106,7 @@
 						About
 					</a>
 				</li>
-				<li class="px-2 py-2 flex items-center cursor-pointer" id="closeMenu">
+				<li class="closeMenu px-2 py-2 flex items-center cursor-pointer">
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
 						stroke="currentColor" class="w-6 h-6 mx-2">
 						<path stroke-linecap="round" stroke-linejoin="round"
@@ -124,13 +123,12 @@
 
 	<!--Lista de Pokemons-->
 	<main
-		class="relative px-2 pb-4 z-10 space-y-4 lg:p-8 xl:bg-white xl:rounded-xl xl:max-w-4xl xl:mx-auto xl:px-0 xl:h-min"
-		id="main">
+		class="main relative px-2 pb-4 z-10 space-y-4 lg:p-8 xl:bg-white xl:rounded-xl xl:max-w-4xl xl:mx-auto xl:px-0 xl:h-min">
 		<!--Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
-		<span class="hidden top-0 left-0 w-screen h-screen bg-black/80 z-30" id="spanBlack"></span>
+		<span class="spanBlack hidden top-0 left-0 w-screen h-screen bg-black/80 z-30"></span>
 		<!--/Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
-		<ol id="pokemonList"
-			class="grid grid-cols-2 justify-center bg-white rounded-lg z-30 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">
+		<ol
+			class="pokemonList grid grid-cols-2 justify-center bg-white rounded-lg z-30 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">
 			<!--Li Card com Pokemon-->
 			<li
 				class="relative grass flex flex-col m-2 p-3 pb-1 text-white rounded-lg overflow-hidden shadow-lg shadow-black/20 sm:min-w-[40vw]">
