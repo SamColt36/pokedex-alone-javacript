@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Sam Colt">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta http-equiv="Content-Language" content="pt-BR">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="">
+	<link rel="stylesheet" href="./src/css/output.css">
+	<title>Pokedex</title>
+	<link rel="icon" type="image/x-icon" href="./favicon.ico" sizes="96x96">
+	<script defer src="./src/js/scrool-banner.js"></script>
+	<script defer src="./src/js/botão-sandwish.js"></script>
+	<script defer src="./src/js/main.js"></script>
+</head>
+<!--BODY bg-gray-50-->
+
+<body class="relative font-sans bg-body">
+	<!--Box navegação-->
+	<header class="py-1 tracking-wide sm:px-2 md:px-2 lg:px-8">
+		<!--Div criada para fins de alinhamento-->
+		<div class="relative flex justify-between items-center xl:max-w-4xl xl:mx-auto">
+			<!--Logo Tipografia-->
+			<figure class="flex-center space-x-3">
+				<img src="./src/assets/background-pokeball.png" alt="Logo tipografia 'pokemon"
+					class="h-7 lg:h-6 xl:h-8">
+				<h1 class="righteous text-xl text-white">Pokedéx</h1>
+			</figure>
+			<!--/Logo Tipografia-->
+
+			<!--Menu em forma de lista. Disponível para desktop-->
+			<ol class="hidden lg:flex lg:text-xl xl:flex px-3">
+				<li><a href="https://pokeapi.co/" class="px-2 py-2 flex items-center" target="_blank">Documentation</a>
+				</li>
+
+				<li><a href="https://github.com/SamColt36" class="px-2 py-2 flex items-center" target="_blank">About</a>
+				</li>
+
+				<li id="exit" class="hidden px-2 py-2 xs:flex sm:flex md:flex items-center cursor-pointer">Close</li>
+			</ol>
+			<!--/Menu em forma de lista. Disponível para desktop-->
+
+			<!--Icon menu sandwish-->
+			<button type="button"
+				class="xs:inline-block sm:inline-block md:inline-block lg:hidden xl:hidden p-2 mx-2 z-50"
+				id="btnSandwish">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+					stroke="currentColor" class="w-7 h-7 text-white">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"
+						id="btnSandwishSvgPath" />
+				</svg>
+			</button>
+			<!--/Icon menu sandwish-->
+		</div>
+
+		<div class="flex justify-center">
+			<label for="pokeSearch" class="bg-white inline-block px-5 py-2 rounded-l-full">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+					stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-body">
+					<path stroke-linecap="round" stroke-linejoin="round"
+						d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+				</svg>
+			</label>
+			<input type="search" id="pokeSearch" name="pokeSearch" placeholder="Search by name" class="outline-0 px-4 rounded-r-full">
+		</div>
+		<!--/Div criada para fins de alinhamento-->
+	</header>
+	<!--/Box navegação-->
+
+
+	<!--Menu Suspenso para Mobile-->
+	<!--Essa tag <div> child serve para fins de alinhamento-->
+	<menuSuspenso class="fixed bottom-0 translate-y-full z-50 shadow-inner lg:hidden xl:hidden" id="menuSuspenso">
+		<!--Menu-->
+		<div class="flex flex-col items-end h-full rounded-t-xl bg-white">
+			<!--Linha com estilização-->
+			<span class="inline-block bg-gray-300 w-12 h-2 m-2 rounded-full mx-auto"></span>
+			<!--/Linha com estilização-->
+			<ol class="flex flex-col py-2 px-3  w-screen divide-y-2 divide-gray-300">
+				<li>
+					<a href="https://pokeapi.co/" class="px-2 py-2 flex items-center" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+							stroke="currentColor" class="w-6 h-6 mx-2">
+							<path stroke-linecap="round" stroke-linejoin="round"
+								d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+						</svg>
+						Documentation
+					</a>
+				</li>
+				<li>
+					<a href="https://github.com/SamColt36" class="px-2 py-2 flex items-center" target="_blank">
+						<svg class="w-6 h-6 mx-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+							stroke-linecap="round" stroke-linejoin="round">
+							<path
+								d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+						</svg>
+						About
+					</a>
+				</li>
+				<li class="px-2 py-2 flex items-center cursor-pointer" id="closeMenu">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+						stroke="currentColor" class="w-6 h-6 mx-2">
+						<path stroke-linecap="round" stroke-linejoin="round"
+							d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+					</svg>
+					Close
+				</li>
+			</ol>
+		</div>
+		<!--/Menu-->
+	</menuSuspenso>
+	<!--/Essa tag <div> child serve para fins de alinhamento-->
+	<!--/Menu Suspenso para Mobile-->
+
+	<!--Lista de Pokemons-->
+	<main
+		class="relative px-2 pb-4 z-10 space-y-4 lg:p-8 xl:bg-white xl:rounded-xl xl:max-w-4xl xl:mx-auto xl:px-0 xl:h-min"
+		id="main">
+		<!--Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
+		<span class="hidden top-0 left-0 w-screen h-screen bg-black/80 z-30" id="spanBlack"></span>
+		<!--/Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
+		<ol id="pokemonList"
+			class="grid grid-cols-2 justify-center bg-white rounded-lg z-30 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">
+			<!--Li Card com Pokemon-->
+			<li
+				class="relative grass flex flex-col m-2 p-3 pb-1 text-white rounded-lg overflow-hidden shadow-lg shadow-black/20 sm:min-w-[40vw]">
+				<!--Imagens de background-->
+				<figure>
+					<img src="./src/assets/background-pokeball-rectangle.png" alt="Ilustração de retângulo opaco"
+						class="absolute top-0 left-0 -rotate-[10deg] -translate-x-2/3 -translate-y-2/3 h-24 z-10 opacity-25">
+					<img src="./src/assets/background-pokeball.png" alt="Ilustração de pokeball opaca"
+						class="absolute -bottom-4 -right-4 h-32 z-10 opacity-25">
+				</figure>
+				<!--/Imagens de background-->
+				<!--ID do Pokemon-->
+				<span class="text-right text-black font-medium opacity-10 z-20 lg:text-lg">#001</span>
+				<!--/ID do Pokemon-->
+				<section class="grid grid-cols-2">
+					<!--Nome do Pokemon-->
+					<h5 class="font-medium tracking-wide col-span-2 my-2 lg:text-lg">Bulbasaur</h5>
+					<!--/Nome do Pokemon-->
+					<!--Types-->
+					<ol class="flex flex-col space-y-2 col-span-1">
+						<li class="type ${type} bg-white/25 py-1 px-3 rounded-lg text-center text-xs w-min lg:text-sm">
+							Glass</li>
+					</ol>
+					<!--/Types-->
+					<!--Imagem do Pokemon-->
+					<img class="max-w-full h-20 self-end z-20 col-span-1 lg:h-24"
+						src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+						alt="Bulbasaur">
+					<!--/Imagem do Pokemon-->
+				</section>
+			</li>
+			<!--/Card com Pokemon-->
+			<!--/Li Card com Pokemon-->
+		</ol>
+	</main>
+	<!--Lista de Pokemons-->
+
+	<!--Rodapé-->
+	<footer class="bg-stone-900 text-gray-50 py-16">
+		<div class="space-y-5 flex-center flex-col">
+			<h2 class="text-2xl">Lorem Ipsum</h2>
+			<p class="text-center text-gray-500 text-xs max-w-sm xs:text-xs sm:text-sm md:text-sm">Lorem ipsum dolor
+				sit, amet consectetur adipisicing elit.
+				Recusandae iste eaque incidunt ullam deserunt?
+			</p>
+			<figure class="h-3 flex space-x-3 xs:h-4 sm:h-4 md:h-4">
+				<img class="h-full cursor-pointer" src="./src/assets/icon-facebook.png" alt="Icon alusivo ao Facebook"
+					title="facebook">
+				<img class="h-full cursor-pointer" src="./src/assets/icon-twitter.png" alt="Icon alusivo ao Twitter"
+					title="twitter">
+				<img class="h-full cursor-pointer" src="./src/assets/icon-g+.png" alt="Icon alusivo ao Google+"
+					title="google+">
+				<img class="h-full cursor-pointer" src="./src/assets/icon-linkedin.png" alt="Icon alusivo ao Linkedin"
+					title="linkedin">
+				<img class="h-full cursor-pointer" src="./src/assets/icon-github.png" alt="Icon alusivo ao Github"
+					title="github">
+			</figure>
+		</div>
+	</footer>
+
+	<copyright class="flex-center text-xs bg-neutral-950 p-4">
+		<p class="text-gray-50">Copyright &#169;2023 SamColt36. Design by <span class="text-gray-600 uppercase"
+				title="nethunt">nethunt</span></p>
+	</copyright>
+	<!--Rodapé-->
+
+	<!--Seção de Scripts-->
+
+	<!--Seção de Scripts-->
+</body>
+
+</html>

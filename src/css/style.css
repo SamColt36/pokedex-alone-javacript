@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+	font-family: Roboto, sans;
+}
+
+.normal {
+	background-color: #A8A878
+}
+
+.fire {
+	background-color: #f06630
+}
+
+.water {
+	background-color: #6890F0
+}
+
+.grass {
+	background-color: #64D368
+}
+
+.electric {
+	background-color: #FFD723
+}
+
+.ice {
+	background-color: #98D8D8
+}
+
+.ground {
+	background-color: #E0C068
+}
+
+.flying {
+	background-color: #A890F0
+}
+
+.poison {
+	background-color: #A040A0
+}
+
+.fighting {
+	background-color: #C03028
+}
+
+.psychic {
+	background-color: #F85888
+}
+
+.dark {
+	background-color: #705848
+}
+
+.rock {
+	background-color: #B8A038
+}
+
+.bug {
+	background-color: #A8B820
+}
+
+.ghost {
+	background-color: #705898
+}
+
+.steel {
+	background-color: #B8B8D0
+}
+
+.dragon {
+	background-color: #7038F8
+}
+
+.fairy {
+	background-color: #FFAEC9
+}
+
+.roxo {
+	background-color: #6C7ADC;
+}
+
+.ocultar-button {
+	visibility: hidden;
+}
+
+.righteous {
+	font-family: 'Righteous', cursive;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bg-gradient {
+	background: rgb(255, 242, 91);
+	background: linear-gradient(90deg, rgb(250, 235, 70) 0%, rgba(255, 215, 35, 1) 48%, rgba(255, 164, 51, 1) 100%);
+}
