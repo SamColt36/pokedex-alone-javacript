@@ -22,11 +22,11 @@
 
 <body class="relative font-sans bg-body">
 	<!--Box navegação-->
-	<header class="py-1 tracking-wide sm:px-2 md:px-2 lg:px-8">
+	<header class="relative py-1 tracking-wide sm:p-2 md:p-2 lg:px-8">
 		<!--Div criada para fins de alinhamento-->
-		<div class="relative flex justify-between items-center xl:max-w-4xl xl:mx-auto">
+		<div class="flex sm:flex-wrap xs:space-y-1 xs:justify-between sm:space-y-1 sm:justify-between md:space-y-1 md:justify-between xl:max-w-4xl xl:mx-auto">
 			<!--Logo Tipografia-->
-			<figure class="flex-center space-x-3">
+			<figure class="flex-center space-x-3 order-1 basis-1/4 xl:basis-auto sm:basis-auto md:basis-auto">
 				<img src="./src/assets/background-pokeball.png" alt="Logo tipografia 'pokemon"
 					class="h-7 lg:h-6 xl:h-8">
 				<h1 class="righteous text-xl text-white">Pokedéx</h1>
@@ -34,7 +34,7 @@
 			<!--/Logo Tipografia-->
 
 			<!--Menu em forma de lista. Disponível para desktop-->
-			<ol class="hidden lg:flex lg:text-xl xl:flex px-3">
+			<ol class="hidden text-white px-3 order-3 basis-1/4 lg:flex lg:text-xl xl:flex">
 				<li><a href="https://pokeapi.co/" class="px-2 py-2 flex items-center" target="_blank">Documentation</a>
 				</li>
 
@@ -45,9 +45,26 @@
 			</ol>
 			<!--/Menu em forma de lista. Disponível para desktop-->
 
-			<!--Icon menu sandwish-->
+			<!--Container com campo de busca de pokemon-->
+			<section class="flex justify-evenly items-center order-2 relative mx-auto xs:order-3 sm:order-3 md:order-3">
+				<div class="flex mx-auto">
+					<label for="pokeSearch" class="bg-white inline-block px-5 py-2 rounded-l-full">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+							stroke="currentColor" class="w-5 h-5 text-body">
+							<path stroke-linecap="round" stroke-linejoin="round"
+								d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+						</svg>
+					</label>
+					<input type="search" id="pokeSearch" name="pokeSearch" placeholder="Search by name"
+						class="outline-0 rounded-r-full w-56">
+				</div>
+			</section>
+			<!--/Container com campo de busca de pokemon-->
+			<!--/Div criada para fins de alinhamento-->
+
+			<!--Icon menu sandwish, disponível apenas em mobile-->
 			<button type="button"
-				class="xs:inline-block sm:inline-block md:inline-block lg:hidden xl:hidden p-2 mx-2 z-50"
+				class="order-2 xs:inline-block sm:inline-block md:inline-block lg:hidden xl:hidden p-2 mx-2 z-50"
 				id="btnSandwish">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
 					stroke="currentColor" class="w-7 h-7 text-white">
@@ -55,23 +72,11 @@
 						id="btnSandwishSvgPath" />
 				</svg>
 			</button>
-			<!--/Icon menu sandwish-->
-		</div>
-
-		<div class="flex justify-center">
-			<label for="pokeSearch" class="bg-white inline-block px-5 py-2 rounded-l-full">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-					stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-body">
-					<path stroke-linecap="round" stroke-linejoin="round"
-						d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-				</svg>
-			</label>
-			<input type="search" id="pokeSearch" name="pokeSearch" placeholder="Search by name" class="outline-0 px-4 rounded-r-full">
+			<!--/Icon menu sandwish, disponível apenas em mobile-->
 		</div>
 		<!--/Div criada para fins de alinhamento-->
 	</header>
 	<!--/Box navegação-->
-
 
 	<!--Menu Suspenso para Mobile-->
 	<!--Essa tag <div> child serve para fins de alinhamento-->
@@ -164,7 +169,7 @@
 	<!--Lista de Pokemons-->
 
 	<!--Rodapé-->
-	<footer class="bg-stone-900 text-gray-50 py-16">
+	<footer class="bg-stone-900 text-gray-50 py-16 xl:max-w-4xl xl:mx-auto xl:px-0 ">
 		<div class="space-y-5 flex-center flex-col">
 			<h2 class="text-2xl">Lorem Ipsum</h2>
 			<p class="text-center text-gray-500 text-xs max-w-sm xs:text-xs sm:text-sm md:text-sm">Lorem ipsum dolor
@@ -186,7 +191,7 @@
 		</div>
 	</footer>
 
-	<copyright class="flex-center text-xs bg-neutral-950 p-4">
+	<copyright class="flex-center text-xs bg-neutral-950 p-4 xl:max-w-4xl xl:mx-auto xl:px-0 ">
 		<p class="text-gray-50">Copyright &#169;2023 SamColt36. Design by <span class="text-gray-600 uppercase"
 				title="nethunt">nethunt</span></p>
 	</copyright>
