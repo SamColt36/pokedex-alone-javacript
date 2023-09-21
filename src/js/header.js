@@ -1,3 +1,4 @@
+//------------CÓDIGO REFERENTE AO MENU SANDWHISH------------//
 const menuSuspenso = document.querySelectorAll('.menuSuspenso')
 const closeMenu = document.querySelectorAll('.closeMenu')
 const btnSandwish = document.querySelectorAll('.btnSandwish')
@@ -51,4 +52,21 @@ function comportamentoBtnMenuSuspenso() {
 
 btnSandwish.forEach(e => e.addEventListener('click', () => comportamentoBtnMenuSuspenso()))
 
-closeMenu.forEach(elemento => elemento.addEventListener('click', () => comportamentoBtnMenuSuspenso()))
+closeMenu.forEach(e => e.addEventListener('click', () => comportamentoBtnMenuSuspenso()))
+//------------CÓDIGO REFERENTE AO ELEMENTO CLEAR INPUT------------//
+const pokeSearchInput = document.querySelectorAll('#pokeSearch');
+const clearButton = document.querySelectorAll('.clearButton');
+
+pokeSearchInput.forEach(i => i.addEventListener('input', () => {
+	if (i.value == '') {
+		clearButton.forEach(e => e.classList.add('inline-block'))
+	} else {
+		clearButton.forEach(e => e.classList.remove('invisible'))
+	}
+}))
+
+clearButton.forEach(i => i.addEventListener('click', function () {
+	pokeSearchInput.forEach(e => e.value = '')
+	i.classList.add('invisible')
+}))
+

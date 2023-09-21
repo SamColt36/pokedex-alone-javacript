@@ -99,3 +99,7 @@
 	background: rgb(255, 242, 91);
 	background: linear-gradient(90deg, rgb(250, 235, 70) 0%, rgba(255, 215, 35, 1) 48%, rgba(255, 164, 51, 1) 100%);
 }
+
+input[type="search"]::-webkit-search-cancel-button {
+	display: none;
+}

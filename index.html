@@ -14,19 +14,18 @@
 	<link rel="stylesheet" href="./src/css/output.css">
 	<title>Pokedex</title>
 	<link rel="icon" type="image/x-icon" href="./favicon.ico" sizes="96x96">
-	<script defer src="./src/js/scrool-banner.js"></script>
-	<script defer src="./src/js/botão-sandwish.js"></script>
+	<script defer src="./src/js/header.js"></script>
 </head>
 <!--BODY bg-gray-50-->
 
 <body class="relative font-sans bg-body">
 	<!--Box navegação-->
-	<header class="relative py-1 tracking-wide sm:p-2 md:p-2 lg:px-8">
+	<header class="relative py-3 sm:p-2 md:p-2 lg:px-8 xl:max-w-4xl xl:mx-auto">
 		<!--Div criada para fins de alinhamento-->
 		<div
-			class="flex sm:flex-wrap xs:space-y-1 xs:justify-between sm:space-y-1 sm:justify-between md:space-y-1 md:justify-between xl:max-w-4xl xl:mx-auto">
+			class="flex justify-between items-center flex-wrap xs:space-y-1 sm:space-y-1 md:space-y-1">
 			<!--Logo Tipografia-->
-			<figure class="flex-center space-x-3 order-1 basis-1/4 xl:basis-auto sm:basis-auto md:basis-auto">
+			<figure class="flex-center space-x-3 order-1">
 				<img src="./src/assets/background-pokeball.png" alt="Logo tipografia 'pokemon"
 					class="h-7 lg:h-6 xl:h-8">
 				<h1 class="righteous text-xl text-white">Pokedéx</h1>
@@ -34,11 +33,13 @@
 			<!--/Logo Tipografia-->
 
 			<!--Menu em forma de lista. Disponível para desktop-->
-			<ol class="hidden text-white px-3 order-3 basis-1/4 lg:flex lg:text-xl xl:flex">
-				<li><a href="https://pokeapi.co/" class="px-2 py-2 flex items-center" target="_blank">Documentation</a>
+			<ol class="hidden text-white px-3 order-2 lg:flex lg:text-xl xl:flex">
+				<li><a href="https://pokeapi.co/" class="px-2 py-2 flex items-center hover:font-medium"
+						target="_blank">Documentation</a>
 				</li>
 
-				<li><a href="https://github.com/SamColt36" class="px-2 py-2 flex items-center" target="_blank">About</a>
+				<li><a href="https://github.com/SamColt36" class="px-2 py-2 flex items-center hover:font-medium"
+						target="_blank">About</a>
 				</li>
 
 				<li class="exit hidden px-2 py-2 xs:flex sm:flex md:flex items-center cursor-pointer">Close</li>
@@ -46,25 +47,39 @@
 			<!--/Menu em forma de lista. Disponível para desktop-->
 
 			<!--Container com campo de busca de pokemon-->
-			<section class="flex justify-evenly items-center order-2 relative mx-auto xs:order-3 sm:order-3 md:order-3">
-				<div class="flex mx-auto">
-					<label for="pokeSearch" class="bg-white inline-block px-5 py-2 rounded-l-full">
+			<section class="flex justify-evenly items-center order-3 relative mx-auto space-x-2 xl:mx-0">
+				<div class="flex items-center space-x-2 w-full">
+					<label for="pokeSearch" class="bg-white flex py-2 rounded-full cursor-pointer px-4"
+						title="Search">
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-							stroke="currentColor" class="w-5 h-5 text-body">
+							stroke="currentColor" class="w-5 text-body flex-center">
 							<path stroke-linecap="round" stroke-linejoin="round"
 								d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 						</svg>
+						<input type="search" id="pokeSearch" name="pokeSearch" placeholder="Search by name"
+							class="outline-0 px-2 appearance-none">
+						<button class="clearButton invisible">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+								class="w-6 h-6 text-body">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+							</svg>
+						</button>
 					</label>
-					<input type="search" id="pokeSearch" name="pokeSearch" placeholder="Search by name"
-						class="outline-0 rounded-r-full w-56">
+					<!--Icon hash que seleciona se a busca é por ID ou NAME do pokemon-->
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
+						stroke="currentColor"
+						class="w-10 h-10 p-3 rounded-full bg-white text-body cursor-pointer shadow-inner shadow-black/40">
+						<path stroke-linecap="round" stroke-linejoin="round"
+							d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5" />
+					</svg>
+					<!--/Icon hash que seleciona se a busca é por ID ou NAME do pokemon-->
 				</div>
 			</section>
 			<!--/Container com campo de busca de pokemon-->
-			<!--/Div criada para fins de alinhamento-->
 
 			<!--Icon menu sandwish, disponível apenas em mobile-->
 			<button type="button"
-				class="btnSandwish order-2 xs:inline-block sm:inline-block md:inline-block lg:hidden xl:hidden p-2 mx-2 z-50">
+				class="btnSandwish order-2 xs:inline-block sm:inline-block md:inline-block lg:hidden xl:hidden p-2 z-50">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
 					stroke="currentColor" class="w-7 h-7 text-white">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"
