@@ -7,10 +7,9 @@ const spanBlack = document.querySelectorAll('.spanBlack')
 
 const pathParamDactived = 'M3.75 9h16.5m-16.5 6.75h16.5'
 const pathParamDdisabled = 'M6 18L18 6M6 6l12 12'
-let count = 1
+let count = 0
 
 btnSandwish.forEach(e => e.classList.add('transition', 'duration-700', 'transition-all', 'ease-in-out'))
-
 menuSuspenso.forEach(e => e.classList.add('transition', 'duration-700', 'transition-all', 'ease-in-out'))
 
 function ativarMenu() {
@@ -51,14 +50,14 @@ function comportamentoBtnMenuSuspenso() {
 }
 
 btnSandwish.forEach(e => e.addEventListener('click', () => comportamentoBtnMenuSuspenso()))
-
 closeMenu.forEach(e => e.addEventListener('click', () => comportamentoBtnMenuSuspenso()))
 //------------CÓDIGO REFERENTE AO ELEMENTO CLEAR INPUT------------//
-const pokeSearchInput = document.querySelectorAll('#pokeSearch');
-const clearButton = document.querySelectorAll('.clearButton');
+const pokeSearchInput = document.querySelectorAll('#pokeSearch')
+const clearButton = document.querySelectorAll('.clearButton')
 
 pokeSearchInput.forEach(i => i.addEventListener('input', () => {
-	if (i.value == '') {
+	let value = i.value
+	if (value.trim() == '') {
 		clearButton.forEach(e => e.classList.add('inline-block'))
 	} else {
 		clearButton.forEach(e => e.classList.remove('invisible'))
@@ -69,4 +68,39 @@ clearButton.forEach(i => i.addEventListener('click', function () {
 	pokeSearchInput.forEach(e => e.value = '')
 	i.classList.add('invisible')
 }))
+//------------CÓDIGO REFERENTE AO ELEMENTO SVG HASH------------//
+const iconHash = document.querySelectorAll('.iconHash')
+const cardSearch = document.querySelectorAll('.cardSearch')
 
+function ativarSearch() {
+	cardSearch.forEach(e => e.classList.toggle('hidden'))
+	btnSandwish.forEach(e => e.classList.toggle('z-50'))
+}
+
+iconHash.forEach(e => e.addEventListener('click', () => ativarSearch()))
+//------------CÓDIGO REFERENTE AO ELEMENTO SVG CHECK------------//
+const radioButtons = document.querySelectorAll('input[type="radio"]')
+const checkButton = document.querySelectorAll('.check-button')
+
+radioButtons.forEach((radio) => {
+	radio.addEventListener('change', () => {
+		if (radio.id === 'name' || radio.id === 'id') {
+			// formaDeBusca é responsável por retorna se a busca é por ID ou NAME
+			const formaDeBusca = radio.id
+
+			checkButton.forEach(e => {
+				e.classList.remove('hidden')
+				e.classList.add('block')
+			})
+		}
+		else checkButton.forEach(e => {
+				e.classList.add('hidden')
+				e.classList.remove('block')
+			})
+	})
+})
+
+checkButton.forEach(checkButtonElements => checkButtonElements.addEventListener('click', () => {
+		iconHash.forEach(() => ativarSearch())
+	})
+)

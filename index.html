@@ -20,10 +20,9 @@
 
 <body class="relative font-sans bg-body">
 	<!--Box navegação-->
-	<header class="relative py-3 sm:p-2 md:p-2 lg:px-8 xl:max-w-4xl xl:mx-auto">
+	<header class="relative p-2 lg:px-8 xl:max-w-4xl xl:mx-auto">
 		<!--Div criada para fins de alinhamento-->
-		<div
-			class="flex justify-between items-center flex-wrap xs:space-y-1 sm:space-y-1 md:space-y-1">
+		<div class="flex justify-between items-center flex-wrap xs:space-y-1 sm:space-y-1 md:space-y-1">
 			<!--Logo Tipografia-->
 			<figure class="flex-center space-x-3 order-1">
 				<img src="./src/assets/background-pokeball.png" alt="Logo tipografia 'pokemon"
@@ -47,28 +46,35 @@
 			<!--/Menu em forma de lista. Disponível para desktop-->
 
 			<!--Container com campo de busca de pokemon-->
-			<section class="flex justify-evenly items-center order-3 relative mx-auto space-x-2 xl:mx-0">
-				<div class="flex items-center space-x-2 w-full">
-					<label for="pokeSearch" class="bg-white flex py-2 rounded-full cursor-pointer px-4"
-						title="Search">
+			<section
+				class="flex justify-evenly items-center order-3 relative space-x-2 max-w-max mx-auto xl:mx-0">
+				<div class="flex items-center space-x-2">
+					<!--Container responsável pela busca por NAME ou ID-->
+					<label for="pokeSearch" class="bg-white flex py-2 rounded-full cursor-pointer px-4" title="Search">
+						<!--SVG com ícone de pesquisa-->
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
 							stroke="currentColor" class="w-5 text-body flex-center">
 							<path stroke-linecap="round" stroke-linejoin="round"
 								d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 						</svg>
-						<input type="search" id="pokeSearch" name="pokeSearch" placeholder="Search by name"
-							class="outline-0 px-2 appearance-none">
+						<!--/SVG com ícone de pesquisa-->
+						<input required type="search" id="pokeSearch" name="pokeSearch" placeholder="Search by name"
+							class="outline-0 px-2 appearance-none w-full">
+						<!--Botão que limpa o value do input pokeSearch-->
 						<button class="clearButton invisible">
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-								class="w-6 h-6 text-body">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+								stroke="currentColor" class="w-6 h-6 text-body">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 							</svg>
 						</button>
+						<!--/Botão que limpa o value do input pokeSearch-->
 					</label>
+					<!--/Container responsável pela busca por NAME ou ID-->
+
 					<!--Icon hash que seleciona se a busca é por ID ou NAME do pokemon-->
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
 						stroke="currentColor"
-						class="w-10 h-10 p-3 rounded-full bg-white text-body cursor-pointer shadow-inner shadow-black/40">
+						class="iconHash z-50 w-10 h-10 p-3 rounded-full bg-white text-body cursor-pointer shadow-inner shadow-black/40">
 						<path stroke-linecap="round" stroke-linejoin="round"
 							d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5" />
 					</svg>
@@ -91,9 +97,29 @@
 		<!--/Div criada para fins de alinhamento-->
 	</header>
 	<!--/Box navegação-->
+	<cardSearch class="cardSearch hidden z-40 fixed top-0 left-0 flex-center w-screen h-screen bg-black/90">
+		<div class="relative">
+			<div class="space-y-3 bg-body text-white p-2 rounded-xl text-xl">
+				<h1 class="text-center font-medium">Sort by:</h1>
+				<form class="bg-white text-black rounded-xl py-5 px-8 shadow-inner shadow-black/40">
+					<input type="radio" id="name" name="selection" value="name">
+					<label for="name">Name</label><br>
+					<input type="radio" id="id" name="selection" value="id">
+					<label for="id">ID</label><br>
+				</form>
 
+			</div>
+			<!--Btn Check-->
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+				stroke="currentColor"
+				class="hidden check-button text-white cursor-pointer w-9 h-9 absolute top-0 right-0 translate-x-full -translate-y-full">
+				<path stroke-linecap="round" stroke-linejoin="round"
+					d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+			</svg>
+			<!--/Btn Check-->
+		</div>
+	</cardSearch>
 	<!--Menu Suspenso para Mobile-->
-	<!--Essa tag <div> child serve para fins de alinhamento-->
 	<menuSuspenso class="menuSuspenso fixed bottom-0 translate-y-full z-50 shadow-inner lg:hidden xl:hidden">
 		<!--Menu-->
 		<div class="flex flex-col items-end h-full rounded-t-xl bg-white">
@@ -133,7 +159,6 @@
 		</div>
 		<!--/Menu-->
 	</menuSuspenso>
-	<!--/Essa tag <div> child serve para fins de alinhamento-->
 	<!--/Menu Suspenso para Mobile-->
 
 	<!--Lista de Pokemons-->
