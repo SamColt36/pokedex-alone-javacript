@@ -178,15 +178,26 @@
 		<div class="border p-2 bg-white rounded-lg">
 			<!--Container com imagens-->
 			<figure class="relative">
+				<!--Pokeball-->
 				<img src="../assets/background-pokeball.png" alt="Ilustração de pokeball opaca"
 					class="absolute right-0 -translate-y-full h-48 z-10 opacity-10">
+				<!--/Pokeball-->
+				<!--Pokemon-->
 				<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
 					alt="Bulbasaur" class="mx-auto absolute top-0 right-0 left-0 -translate-y-36 h-64 drop-shadow-md">
+				<!--/Pokemon-->
+				<!--Arrow Left-->
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-					stroke="currentColor" class="w-6 h-6 text-white">
+					stroke="currentColor" class="w-6 h-6 absolute left-1/4 -translate-y-12 top-0 text-white cursor-pointer drop-shadow-md duration-700 hover:scale-150 hover:transition-transform xs:left-0 sm:left-0 md:left-0">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+				</svg>
+				<!--/Arrow Left-->
+				<!--Arrow Right-->
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+					stroke="currentColor" class="w-6 h-6 absolute right-1/4 -translate-y-12 top-0 text-white cursor-pointer drop-shadow-xl duration-700 hover:scale-150 hover:transition-transform xs:right-0 sm:right-0 md:right-0">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
 				</svg>
-
+				<!--/Arrow Right-->
 			</figure>
 			<!--/Container com imagens-->
 			<!--Seção com informações 'ABOUT'-->
@@ -206,7 +217,8 @@
 				<div>
 					<ul class="flex justify-center items-stretch divide-x divide-gray-300">
 						<!--PESO-->
-						<li class="relative text-black flex justify-between items-center flex-col self-stretch px-4 xs:text-sm xs:px-2 sm:px-2 sm:text-sm">
+						<li
+							class="relative text-black flex justify-between items-center flex-col self-stretch px-4 xs:text-sm xs:px-2 sm:px-2 sm:text-sm">
 							<section class="flex-center space-x-4 h-2/3">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
 									stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -219,7 +231,8 @@
 						</li>
 						<!--/PESO-->
 						<!--ALTURA-->
-						<li class="text-black flex justify-between items-center flex-col self-stretch px-4 xs:text-sm xs:px-2 sm:px-2 sm:text-sm">
+						<li
+							class="text-black flex justify-between items-center flex-col self-stretch px-4 xs:text-sm xs:px-2 sm:px-2 sm:text-sm">
 							<section class="flex-center space-x-4 h-2/3">
 								<svg class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
 									stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -239,7 +252,8 @@
 						</li>
 						<!--/ALTURA-->
 						<!--MOVES-->
-						<li class="text-black flex justify-between items-center flex-col self-stretch px-4 xs:text-sm xs:px-2 sm:px-2 sm:text-sm">
+						<li
+							class="text-black flex justify-between items-center flex-col self-stretch px-4 xs:text-sm xs:px-2 sm:px-2 sm:text-sm">
 							<ul class="flex-center flex-col h-2/3">
 								<li>Chlorophyll</li>
 								<li>Overgrow</li>
@@ -252,14 +266,17 @@
 				<!--/PESO, ALTURA E MOVES-->
 			</div>
 			<!--/Seção com informações 'ABOUT'-->
-			<p class="text-black py-6 px-2 text-sm lg:max-w-lg lg:mx-auto lg:text-base xl:text-lg xl:max-w-2xl xl:mx-auto">There is a plant seed on its back right from the day this Pokémon is
+			<p
+				class="text-black py-6 px-2 text-sm lg:max-w-lg lg:mx-auto lg:text-base xl:text-lg xl:max-w-2xl xl:mx-auto">
+				There is a plant seed on its back right from the day this Pokémon is
 				born. The seed slowly grows larger.
 			</p>
 
 			<header class="text-center text-lg font-bold text-grass lg:text-xl xl:text-2xl">Base Stats</header>
 
 			<!--Tabela com habilidades-->
-			<section class="flex space-x-3 divide-x divide-gray-300 xs:px-2 sm:px-2 md:px-2 lg:max-w-lg lg:mx-auto xl:max-w-2xl xl:mx-auto">
+			<section
+				class="flex space-x-3 divide-x divide-gray-300 xs:px-2 sm:px-2 md:px-2 lg:max-w-lg lg:mx-auto xl:max-w-2xl xl:mx-auto">
 				<!--LABEL-->
 				<ul class="text-sm font-bold text-right text-grass lg:text-base">
 					<li>HP</li>
@@ -333,9 +350,8 @@
 	<!--Rodapé-->
 
 	<!--Seção de Scripts-->
-
+	<script src="../js/main.js"></script>
 	<!--Seção de Scripts-->
-
 </body>
 
 </html>
