@@ -158,7 +158,7 @@
 	</menuSuspenso>
 	<!--/Menu Suspenso para Mobile-->
 
-	<main class="main relative z-10 lg:p-8 xl:bg-white xl:rounded-xl xl:max-w-4xl xl:mx-auto xl:px-0 xl:h-min">
+	<main class="main relative z-10 rounded-md lg:p-8 xl:rounded-xl xl:max-w-4xl xl:mx-auto xl:px-0 xl:h-min">
 		<!--Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
 		<span class="spanBlack hidden top-0 left-0 w-screen h-screen bg-black/80 z-30"></span>
 		<!--/Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
@@ -170,12 +170,12 @@
 						<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
 					</svg>
 				</a>
-				<h1 class="righteous text-xl text-white drop-shadow-xl">Bulbasaur</h1>
+				<h1 class="righteous text-xl text-white drop-shadow-xl lg:text-2xl">Bulbasaur</h1>
 			</div>
-			<span class="righteous text-sm text-white drop-shadow-xl">#001</span>
+			<span class="righteous text-sm text-white drop-shadow-xl lg:text-base">#001</span>
 		</nav>
 
-		<div class="border p-2 bg-white">
+		<div class="border p-2 bg-white rounded-lg">
 			<!--Container com imagens-->
 			<figure class="relative">
 				<img src="../assets/background-pokeball.png" alt="Ilustração de pokeball opaca"
@@ -193,20 +193,20 @@
 			<div class="pt-28 space-y-5 px-2">
 				<!--Types-->
 				<ul class="flex-center space-x-3 text-white font-medium">
-					<li class="bg-grass py-1 px-3 rounded-full text-center text-xs w-min lg:text-sm">
+					<li class="bg-grass py-1 px-3 rounded-full text-center text-xs w-min lg:text-sm xl:text-lg">
 						Glass</li>
-					<li class="bg-poison py-1 px-3 rounded-full text-center text-xs w-min lg:text-sm">
+					<li class="bg-poison py-1 px-3 rounded-full text-center text-xs w-min lg:text-sm xl:text-lg">
 						Poison</li>
 				</ul>
 				<!--/Types-->
 				<!--About-->
-				<h1 class="text-center text-lg font-bold">About</h1>
+				<h1 class="text-center text-lg font-bold text-grass lg:text-xl xl:text-2xl">About</h1>
 				<!--/About-->
 				<!--PESO, ALTURA E MOVES-->
 				<div>
 					<ul class="flex justify-center items-stretch divide-x divide-gray-300">
 						<!--PESO-->
-						<li class="relative text-black flex justify-between items-center flex-col self-stretch px-4">
+						<li class="relative text-black flex justify-between items-center flex-col self-stretch px-4 xs:text-sm xs:px-2 sm:px-2 sm:text-sm">
 							<section class="flex-center space-x-4 h-2/3">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
 									stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -219,7 +219,7 @@
 						</li>
 						<!--/PESO-->
 						<!--ALTURA-->
-						<li class="text-black flex justify-between items-center flex-col self-stretch px-4">
+						<li class="text-black flex justify-between items-center flex-col self-stretch px-4 xs:text-sm xs:px-2 sm:px-2 sm:text-sm">
 							<section class="flex-center space-x-4 h-2/3">
 								<svg class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
 									stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -239,7 +239,7 @@
 						</li>
 						<!--/ALTURA-->
 						<!--MOVES-->
-						<li class="text-black flex justify-between items-center flex-col self-stretch px-4">
+						<li class="text-black flex justify-between items-center flex-col self-stretch px-4 xs:text-sm xs:px-2 sm:px-2 sm:text-sm">
 							<ul class="flex-center flex-col h-2/3">
 								<li>Chlorophyll</li>
 								<li>Overgrow</li>
@@ -252,15 +252,16 @@
 				<!--/PESO, ALTURA E MOVES-->
 			</div>
 			<!--/Seção com informações 'ABOUT'-->
-			<p class="text-black py-6 px-2 text-sm">There is a plant seed on its back right from the day this Pokémon is
+			<p class="text-black py-6 px-2 text-sm lg:max-w-lg lg:mx-auto lg:text-base xl:text-lg xl:max-w-2xl xl:mx-auto">There is a plant seed on its back right from the day this Pokémon is
 				born. The seed slowly grows larger.
 			</p>
 
-			<header class="text-center text-lg font-bold text-grass">Base Stats</header>
+			<header class="text-center text-lg font-bold text-grass lg:text-xl xl:text-2xl">Base Stats</header>
+
 			<!--Tabela com habilidades-->
-			<section class="flex space-x-3 divide-x divide-gray-300">
+			<section class="flex space-x-3 divide-x divide-gray-300 xs:px-2 sm:px-2 md:px-2 lg:max-w-lg lg:mx-auto xl:max-w-2xl xl:mx-auto">
 				<!--LABEL-->
-				<ul class="text-sm font-bold text-right text-grass">
+				<ul class="text-sm font-bold text-right text-grass lg:text-base">
 					<li>HP</li>
 					<li>ATK</li>
 					<li>DEF</li>
@@ -270,7 +271,7 @@
 				</ul>
 				<!--/LABEL-->
 				<div class="flex w-full">
-					<ul class="text-sm text-black px-2 w-full">
+					<ul class="text-sm text-black px-2 w-full lg:text-base">
 						<li class="flex-center space-x-4">
 							<p>045</p>
 							<progress value="45" max="100" class="grass-bar"></progress>
