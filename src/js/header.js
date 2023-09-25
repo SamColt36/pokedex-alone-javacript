@@ -12,37 +12,26 @@ let count = 0
 btnSandwish.forEach(e => e.classList.add('transition', 'duration-700', 'transition-all', 'ease-in-out'))
 menuSuspenso.forEach(e => e.classList.add('transition', 'duration-700', 'transition-all', 'ease-in-out'))
 
-function ativarMenu() {
-	pathElement.forEach(e => e.setAttribute("d", pathParamDactived))
-
+function toggleClass() {
 	spanBlack.forEach(e => {
-		e.classList.remove('fixed')
-		e.classList.add('hidden')
+		e.classList.toggle('fixed')
+		e.classList.toggle('hidden')
 	})
 
-	btnSandwish.forEach(e => {
-		e.classList.remove('text-white')
-		e.classList.add('text-black')
-	})
-
-	menuSuspenso.forEach(e => e.classList.add('translate-y-full'))
+	btnSandwish.forEach(btnSandwishElements => btnSandwishElements.classList.toggle('text-white', 'text-black'))
+	iconHash.forEach(iconHashElements => iconHashElements.classList.toggle('z-50'))
+	menuSuspenso.forEach(e => e.classList.toggle('translate-y-full'))
+}
+function ativarMenu() {
+	pathElement.forEach(e => e.setAttribute("d", pathParamDdisabled))
+	toggleClass()
 }
 
 function desativarMenu() {
-	pathElement.forEach(e => e.setAttribute("d", pathParamDdisabled))
-
-	spanBlack.forEach(e => {
-		e.classList.remove('hidden')
-		e.classList.add('fixed')
-	})
-
-	btnSandwish.forEach(e => {
-		e.classList.remove('text-black')
-		e.classList.add('text-white')
-	})
-
-	menuSuspenso.forEach(e => e.classList.remove('translate-y-full'))
+	pathElement.forEach(e => e.setAttribute("d", pathParamDactived))
+	toggleClass()
 }
+
 
 function comportamentoBtnMenuSuspenso() {
 	count++
@@ -94,13 +83,13 @@ radioButtons.forEach((radio) => {
 			})
 		}
 		else checkButton.forEach(e => {
-				e.classList.add('hidden')
-				e.classList.remove('block')
-			})
+			e.classList.add('hidden')
+			e.classList.remove('block')
+		})
 	})
 })
 
 checkButton.forEach(checkButtonElements => checkButtonElements.addEventListener('click', () => {
-		iconHash.forEach(() => ativarSearch())
-	})
+	iconHash.forEach(() => ativarSearch())
+})
 )
