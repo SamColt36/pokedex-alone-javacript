@@ -166,7 +166,7 @@
 		<span class="spanBlack hidden top-0 left-0 w-screen h-screen bg-black/80 z-30"></span>
 		<!--/Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
 		<ol
-			class="pokemonList grid grid-cols-2 justify-center bg-white rounded-lg z-30 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">
+			class="pokemonList grid grid-cols-2 justify-center bg-white rounded-lg z-30 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4" id="listPokemons">
 			<!--Li Card com Pokemon-->
 			<li
 				class="relative bg-grass flex flex-col m-2 p-3 pb-1 text-white rounded-lg overflow-hidden shadow-lg shadow-black/20 sm:min-w-[40vw]">
@@ -236,7 +236,9 @@
 	<!--Rodapé-->
 
 	<!--Seção de Scripts-->
-	<script src="src/js/main.js"></script>
+	<script src="./src/js/pokemonService.js"></script>
+	<script src="./src/js/pokemon.js"></script>
+	<script src="./src/js/main.js"></script>
 	<!--Seção de Scripts-->
 </body>
 
