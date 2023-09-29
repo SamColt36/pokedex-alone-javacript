@@ -2052,10 +2052,6 @@ video {
   background-color: rgba(220, 10, 45, 1);
 }
 
-.bg-grass {
-  background-color: rgba(116, 203, 72, 1);
-}
-
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
@@ -2064,10 +2060,6 @@ video {
 .bg-neutral-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(10 10 10 / var(--tw-bg-opacity));
-}
-
-.bg-poison {
-  background-color: rgba(164, 62, 158, 1);
 }
 
 .bg-stone-900 {
@@ -2444,10 +2436,6 @@ video {
 
 .text-body {
   color: rgba(220, 10, 45, 1);
-}
-
-.text-grass {
-  color: rgba(116, 203, 72, 1);
 }
 
 .text-gray-400 {

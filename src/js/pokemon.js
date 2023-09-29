@@ -1,44 +1,49 @@
 class Pokemon {
-	constructor({name, id, types, weight, height, moves, stats, sprites}) {
+	constructor(name, id, types, weight, height, statsName, statsValue, sprites) {
 		this._name = name
 		this._id = id
 		this._types = types
 		this._weight = weight
 		this._height = height
-		this._moves = moves
-		this._stats = stats
+		this._statsName = statsName
+		this._statsValue = statsValue
 		this._sprites = sprites
 	}
 
 	get name() {
-		return _name
+		return this.capitalize(this._name)
 	}
 
 	get id() {
-		return _id
+		return this._id
 	}
 
 	get types() {
-		return _types
+		return this._types
 	}
 
 	get weight() {
-		return _weight
+		return this._weight
 	}
 
 	get height() {
-		return _height
+		return this._height
 	}
-	
-	get moves() {
-		return _moves
+
+	get statsName() {
+		return this.capitalize(this._statsName)
 	}
-	
-	get stats() {
-		return _stats
+
+	get statsValue() {
+		return this._statsValue
 	}
-	
+
 	get sprites() {
-		return _sprites
+		return this._sprites
 	}
+
+	capitalize(string) {
+		return string.charAt(0).toUpperCase() + string.slice(1)
+	}
+
 }

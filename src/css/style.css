@@ -44,3 +44,79 @@ progress::-webkit-progress-value {
 	border-radius: 50px;
 	background-color: rgba(116, 203, 72, 1);
 }
+
+.normal {
+	background-color: #A8A878
+}
+
+.fire {
+	background-color: #f06630
+}
+
+.water {
+	background-color: #6890F0
+}
+
+.grass {
+	background-color: #64D368
+}
+
+.electric {
+	background-color: #FFD723
+}
+
+.ice {
+	background-color: #98D8D8
+}
+
+.ground {
+	background-color: #E0C068
+}
+
+.flying {
+	background-color: #A890F0
+}
+
+.poison {
+	background-color: #A040A0
+}
+
+.fighting {
+	background-color: #C03028
+}
+
+.psychic {
+	background-color: #F85888
+}
+
+.dark {
+	background-color: #705848
+}
+
+.rock {
+	background-color: #B8A038
+}
+
+.bug {
+	background-color: #A8B820
+}
+
+.ghost {
+	background-color: #705898
+}
+
+.steel {
+	background-color: #B8B8D0
+}
+
+.dragon {
+	background-color: #7038F8
+}
+
+.fairy {
+	background-color: #FFAEC9
+}
+
+.roxo {
+	background-color: #6C7ADC;
+}
