@@ -43,7 +43,7 @@ closeMenu.forEach(e => e.addEventListener('click', () => comportamentoBtnMenuSus
 //------------CÓDIGO REFERENTE AO ELEMENTO CLEAR INPUT------------//
 const pokeSearchInput = document.querySelectorAll('#pokeSearch')
 const clearButton = document.querySelectorAll('.clearButton')
-
+const svgSearch = document.querySelectorAll('.svgSearch')
 pokeSearchInput.forEach(i => i.addEventListener('input', () => {
 	let value = i.value
 	if (value.trim() == '') {
@@ -76,6 +76,7 @@ radioButtons.forEach((radio) => {
 		if (radio.id === 'name' || radio.id === 'id') {
 			// formaDeBusca é responsável por retorna se a busca é por ID ou NAME
 			const formaDeBusca = radio.id
+			console.log(formaDeBusca)
 
 			checkButton.forEach(e => {
 				e.classList.remove('hidden')
@@ -89,7 +90,5 @@ radioButtons.forEach((radio) => {
 	})
 })
 
-checkButton.forEach(checkButtonElements => checkButtonElements.addEventListener('click', () => {
-	iconHash.forEach(() => ativarSearch())
-})
-)
+checkButton.forEach(checkButtonElements => checkButtonElements.addEventListener('click', () => iconHash.forEach(() => ativarSearch())))
+

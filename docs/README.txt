@@ -2,4 +2,4 @@ O arquivo `script.sh` cria a árvore de diretórios e arquivos utilidados em pro
 
 O arquivo `compiler.sh` compila o arquivo de saída css gerado pelo tailwind.config.js
 
-estilização do progress html
+quando o usuario digitar um valor no campo de pesquisa, esse por sua vez irá clicar no no btnSearch e redirecionará a pagina pokemon-details.html

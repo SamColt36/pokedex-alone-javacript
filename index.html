@@ -14,7 +14,6 @@
 	<link rel="stylesheet" href="./src/css/output.css">
 	<title>Pokedex</title>
 	<link rel="icon" type="image/x-icon" href="./favicon.ico" sizes="96x96">
-	<script defer src="./src/js/header.js"></script>
 </head>
 
 <body class="relative font-sans bg-body">
@@ -24,8 +23,7 @@
 		<div class="flex justify-between items-center flex-wrap xs:space-y-1 sm:space-y-1 md:space-y-1">
 			<!--Logo Tipografia-->
 			<figure class="flex-center space-x-3 order-1">
-				<img src="./src/assets/background-pokeball.png" alt="Logo tipografia 'pokemon"
-					class="h-7 lg:h-6 xl:h-8">
+				<img src="./src/assets/background-pokeball.png" alt="Logo tipografia pokemon" class="h-7 lg:h-6 xl:h-8">
 				<h1 class="righteous text-xl text-white">Pokedéx</h1>
 			</figure>
 			<!--/Logo Tipografia-->
@@ -57,7 +55,7 @@
 						</svg>
 						<!--/SVG com ícone de pesquisa-->
 						<input required type="search" id="pokeSearch" name="pokeSearch" placeholder="Search by name"
-							class="outline-0 px-2 appearance-none w-full">
+							class="outline-0 px-2 appearance-none w-full text-black">
 						<!--Botão que limpa o value do input pokeSearch-->
 						<button class="clearButton invisible">
 							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -165,8 +163,8 @@
 		<!--Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
 		<span class="spanBlack hidden top-0 left-0 w-screen h-screen bg-black/80 z-30"></span>
 		<!--/Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
-		<ol
-			class="pokemonList grid grid-cols-2 justify-center bg-white rounded-lg z-30 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4" id="listPokemons">
+		<ol class="pokemonList grid grid-cols-2 justify-center bg-white rounded-lg z-30 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4"
+			id="listPokemons">
 			<!--Li Card com Pokemon-->
 			<!--/Li Card com Pokemon-->
 		</ol>
@@ -205,6 +203,7 @@
 	<script src="./src/js/pokemonService.js"></script>
 	<script src="./src/js/pokemon.js"></script>
 	<script src="./src/js/main.js"></script>
+	<script src="./src/js/header.js"></script>
 	<!--Seção de Scripts-->
 </body>
 

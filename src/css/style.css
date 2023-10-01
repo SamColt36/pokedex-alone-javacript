@@ -36,87 +36,107 @@ progress {
 }
 
 progress::-webkit-progress-bar {
-	background-color: rgba(116, 203, 72, .2);
+	background-color: rgba(181, 118, 118, 0.2);
 	border-radius: 50px;
 }
 
 progress::-webkit-progress-value {
 	border-radius: 50px;
-	background-color: rgba(116, 203, 72, 1);
+	background-color: var(--progress-bar-color)
 }
 
+
 .normal {
-	background-color: #A8A878
+	background-color: #A8A878;
+	color: #A8A878;
 }
 
 .fire {
-	background-color: #f06630
+	background-color: #f06630;
+	color: #f06630;
 }
 
 .water {
-	background-color: #6890F0
+	background-color: #6890F0;
+	color: #6890F0;
 }
 
 .grass {
-	background-color: #64D368
+	background-color: #64D368;
+	color: #64D368;
 }
 
 .electric {
-	background-color: #FFD723
+	background-color: #FFD723;
+	color: #FFD723;
 }
 
 .ice {
-	background-color: #98D8D8
+	background-color: #98D8D8;
+	color: #98D8D8;
 }
 
 .ground {
-	background-color: #E0C068
+	background-color: #E0C068;
+	color: #E0C068;
 }
 
 .flying {
-	background-color: #A890F0
+	background-color: #A890F0;
+	color: #A890F0;
 }
 
 .poison {
-	background-color: #A040A0
+	background-color: #A040A0;
+	color: #A040A0;
 }
 
 .fighting {
-	background-color: #C03028
+	background-color: #C03028;
+	color: #C03028;
 }
 
 .psychic {
-	background-color: #F85888
+	background-color: #F85888;
+	color: #F85888;
 }
 
 .dark {
-	background-color: #705848
+	background-color: #705848;
+	color: #705848;
 }
 
 .rock {
-	background-color: #B8A038
+	background-color: #B8A038;
+	color: #B8A038;
 }
 
 .bug {
-	background-color: #A8B820
+	background-color: #A8B820;
+	color: #A8B820;
 }
 
 .ghost {
-	background-color: #705898
+	background-color: #705898;
+	color: #705898;
 }
 
 .steel {
-	background-color: #B8B8D0
+	background-color: #B8B8D0;
+	color: #B8B8D0;
 }
 
 .dragon {
-	background-color: #7038F8
+	background-color: #7038F8;
+	color: #7038F8;
 }
 
 .fairy {
-	background-color: #FFAEC9
+	background-color: #FFAEC9;
+	color: #FFAEC9;
 }
 
 .roxo {
 	background-color: #6C7ADC;
+	color: #6C7ADC;
 }

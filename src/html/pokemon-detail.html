@@ -14,10 +14,9 @@
 	<link rel="stylesheet" href="../css/output.css">
 	<title>Detail Pokemon</title>
 	<link rel="icon" type="image/x-icon" href="../../favicon.ico" sizes="96x96">
-	<script defer src="../js/header.js"></script>
 </head>
 
-<body class="relative font-sans bg-grass">
+<body class="relative font-sans pokemonType">
 	<!--Box navegação-->
 	<header class="relative p-2 lg:px-8 xl:max-w-4xl xl:mx-auto">
 		<!--Div criada para fins de alinhamento-->
@@ -50,13 +49,13 @@
 					<label for="pokeSearch" class="bg-white flex py-2 rounded-full cursor-pointer px-4" title="Search">
 						<!--SVG com ícone de pesquisa-->
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-							stroke="currentColor" class="w-5 text-body flex-center">
+							stroke="currentColor" class="svgSearch w-5 text-body flex-center">
 							<path stroke-linecap="round" stroke-linejoin="round"
 								d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 						</svg>
 						<!--/SVG com ícone de pesquisa-->
 						<input required type="search" id="pokeSearch" name="pokeSearch" placeholder="Search by name"
-							class="outline-0 px-2 appearance-none w-full">
+							class="outline-0 px-2 appearance-none w-full text-black">
 						<!--Botão que limpa o value do input pokeSearch-->
 						<button class="clearButton invisible">
 							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -170,9 +169,9 @@
 						<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
 					</svg>
 				</a>
-				<h1 class="righteous text-xl text-white drop-shadow-xl lg:text-2xl">Bulbasaur</h1>
+				<h1 class="pokemonName righteous text-xl text-white drop-shadow-xl lg:text-2xl"></h1>
 			</div>
-			<span class="righteous text-sm text-white drop-shadow-xl lg:text-base">#001</span>
+			<span class="pokemonID righteous text-sm text-white drop-shadow-xl lg:text-base"></span>
 		</nav>
 
 		<div class="border p-2 bg-white rounded-lg">
@@ -183,18 +182,20 @@
 					class="absolute right-0 -translate-y-full h-48 z-10 opacity-10">
 				<!--/Pokeball-->
 				<!--Pokemon-->
-				<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-					alt="Bulbasaur" class="mx-auto absolute top-0 right-0 left-0 -translate-y-36 h-64 drop-shadow-md">
+				<img src="" alt=""
+					class="pokemonSprites mx-auto absolute top-0 right-0 left-0 -translate-y-36 h-64 drop-shadow-md">
 				<!--/Pokemon-->
 				<!--Arrow Left-->
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-					stroke="currentColor" class="w-6 h-6 absolute left-1/4 -translate-y-12 top-0 text-white cursor-pointer drop-shadow-md duration-700 hover:scale-150 hover:transition-transform xs:left-0 sm:left-0 md:left-0">
+					stroke="currentColor"
+					class="w-6 h-6 absolute left-1/4 -translate-y-12 top-0 text-white cursor-pointer drop-shadow-md duration-700 hover:scale-150 hover:transition-transform xs:left-0 sm:left-0 md:left-0">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
 				</svg>
 				<!--/Arrow Left-->
 				<!--Arrow Right-->
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-					stroke="currentColor" class="w-6 h-6 absolute right-1/4 -translate-y-12 top-0 text-white cursor-pointer drop-shadow-xl duration-700 hover:scale-150 hover:transition-transform xs:right-0 sm:right-0 md:right-0">
+					stroke="currentColor"
+					class="w-6 h-6 absolute right-1/4 -translate-y-12 top-0 text-white cursor-pointer drop-shadow-xl duration-700 hover:scale-150 hover:transition-transform xs:right-0 sm:right-0 md:right-0">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
 				</svg>
 				<!--/Arrow Right-->
@@ -225,7 +226,7 @@
 									<path stroke-linecap="round" stroke-linejoin="round"
 										d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z">
 								</svg>
-								<p>6,9 kg</p>
+								<p class="pokemonWeight"></p>
 							</section>
 							<p class="text-gray-400 text-sm">Weight</p>
 						</li>
@@ -246,21 +247,11 @@
 									<polyline points="12 4 12 7 " />
 									<polyline points="16 4 16 6 " />
 								</svg>
-								<p>0,7 m</p>
+								<p class="pokemonHeight"></p>
 							</section>
 							<p class="text-gray-400 text-sm">Height</p>
 						</li>
 						<!--/ALTURA-->
-						<!--MOVES-->
-						<li
-							class="text-black flex justify-between items-center flex-col self-stretch px-4 xs:text-sm xs:px-2 sm:px-2 sm:text-sm">
-							<ul class="flex-center flex-col h-2/3">
-								<li>Chlorophyll</li>
-								<li>Overgrow</li>
-							</ul>
-							<p class="text-gray-400 text-sm">Moves</p>
-						</li>
-						<!--/MOVES-->
 					</ul>
 				</div>
 				<!--/PESO, ALTURA E MOVES-->
@@ -272,13 +263,14 @@
 				born. The seed slowly grows larger.
 			</p>
 
-			<header class="text-center text-lg font-bold text-grass lg:text-xl xl:text-2xl">Base Stats</header>
+			<header class="text-center text-lg font-bold text-grass lg:text-xl xl:text-2xl" id="header">Base Stats
+			</header>
 
 			<!--Tabela com habilidades-->
 			<section
 				class="flex space-x-3 divide-x divide-gray-300 xs:px-2 sm:px-2 md:px-2 lg:max-w-lg lg:mx-auto xl:max-w-2xl xl:mx-auto">
 				<!--LABEL-->
-				<ul class="text-sm font-bold text-right text-grass lg:text-base">
+				<ul class="text-sm font-bold text-right lg:text-base">
 					<li>HP</li>
 					<li>ATK</li>
 					<li>DEF</li>
@@ -289,29 +281,41 @@
 				<!--/LABEL-->
 				<div class="flex w-full">
 					<ul class="text-sm text-black px-2 w-full lg:text-base">
-						<li class="flex-center space-x-4">
-							<p>045</p>
-							<progress value="45" max="100" class="grass-bar"></progress>
+						<li class="flex-center space-x-4 relative w-full">
+							<p class="pokemonStat"></p>
+							<div class="flex items-center relative w-full border h-2 bg-gray-200 rounded-full">
+								<span class="inline-block pokemonType rounded-full h-2 statsValueBar"></span>
+							</div>
 						</li>
-						<li class="flex-center space-x-4">
-							<p>049</p>
-							<progress value="49" max="100" class="grass-bar"></progress>
+						<li class="flex-center space-x-4 relative w-full">
+							<p class="pokemonStat"></p>
+							<div class="flex items-center relative w-full border h-2 bg-gray-200 rounded-full">
+								<span class="inline-block pokemonType rounded-full h-2 statsValueBar"></span>
+							</div>
 						</li>
-						<li class="flex-center space-x-4">
-							<p>049</p>
-							<progress value="49" max="100" class="grass-bar"></progress>
+						<li class="flex-center space-x-4 relative w-full">
+							<p class="pokemonStat"></p>
+							<div class="flex items-center relative w-full border h-2 bg-gray-200 rounded-full">
+								<span class="inline-block pokemonType rounded-full h-2 statsValueBar"></span>
+							</div>
 						</li>
-						<li class="flex-center space-x-4">
-							<p>065</p>
-							<progress value="65" max="100" class="grass-bar"></progress>
+						<li class="flex-center space-x-4 relative w-full">
+							<p class="pokemonStat"></p>
+							<div class="flex items-center relative w-full border h-2 bg-gray-200 rounded-full">
+								<span class="inline-block pokemonType rounded-full h-2 statsValueBar"></span>
+							</div>
 						</li>
-						<li class="flex-center space-x-4">
-							<p>065</p>
-							<progress value="65" max="100" class="grass-bar"></progress>
+						<li class="flex-center space-x-4 relative w-full">
+							<p class="pokemonStat"></p>
+							<div class="flex items-center relative w-full border h-2 bg-gray-200 rounded-full">
+								<span class="inline-block pokemonType rounded-full h-2 statsValueBar"></span>
+							</div>
 						</li>
-						<li class="flex-center space-x-4">
-							<p>045</p>
-							<progress value="45" max="100" class="grass-bar"></progress>
+						<li class="flex-center space-x-4 relative w-full">
+							<p class="pokemonStat"></p>
+							<div class="flex items-center relative w-full border h-2 bg-gray-200 rounded-full">
+								<span class="inline-block pokemonType rounded-full h-2 statsValueBar"></span>
+							</div>
 						</li>
 					</ul>
 				</div>
@@ -350,7 +354,10 @@
 	<!--Rodapé-->
 
 	<!--Seção de Scripts-->
-	<script src="../js/main.js"></script>
+	<script src="../js/pokemonService.js"></script>
+	<script src="../js/pokemon.js"></script>
+	<script src="../js/main-details.js"></script>
+	<script src="../js/header.js"></script>
 	<!--Seção de Scripts-->
 </body>
 
