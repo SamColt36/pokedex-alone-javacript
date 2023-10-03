@@ -49,13 +49,13 @@
 					<label for="pokeSearch" class="bg-white flex py-2 rounded-full cursor-pointer px-4" title="Search">
 						<!--SVG com ícone de pesquisa-->
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-							stroke="currentColor" class="w-5 text-body flex-center">
+							stroke="currentColor" class="svgSearch w-5 text-body flex-center">
 							<path stroke-linecap="round" stroke-linejoin="round"
 								d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 						</svg>
 						<!--/SVG com ícone de pesquisa-->
 						<input required type="search" id="pokeSearch" name="pokeSearch" placeholder="Search by name"
-							class="outline-0 px-2 appearance-none w-full text-black">
+							class="pokeSearch outline-0 px-2 appearance-none w-full text-black">
 						<!--Botão que limpa o value do input pokeSearch-->
 						<button class="clearButton invisible">
 							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -170,6 +170,7 @@
 		</ol>
 	</main>
 	<!--Lista de Pokemons-->
+
 	<!--Rodapé-->
 	<footer class="bg-stone-900 text-gray-50 py-16 xl:max-w-4xl xl:mx-auto xl:px-0 ">
 		<div class="space-y-5 flex-center flex-col">
@@ -202,8 +203,9 @@
 	<!--Seção de Scripts-->
 	<script src="./src/js/pokemonService.js"></script>
 	<script src="./src/js/pokemon.js"></script>
-	<script src="./src/js/main.js"></script>
-	<script src="./src/js/header.js"></script>
+	<script type="module" src="./src/js/main-details.js"></script>
+	<script type="module" src="./src/js/main.js"></script>
+	<script type="module" src="./src/js/header.js"></script>
 	<!--Seção de Scripts-->
 </body>
 

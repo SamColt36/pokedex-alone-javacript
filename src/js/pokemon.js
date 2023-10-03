@@ -43,7 +43,7 @@ class Pokemon {
 		return string.charAt(0).toUpperCase() + string.slice(1)
 	}
 
-	intencePokemon(pokemonDetails) {
+	instancePokemon(pokemonDetails) {
 		const name = pokemonDetails.name
 		const id = pokemonDetails.id
 		const types = pokemonDetails.types.map(type => type.type.name)

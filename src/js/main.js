@@ -51,7 +51,7 @@ function convertPokemonToHtmlLi({ types, id, name, sprites, formatarNumeros }) {
 	const sortedPokemons = pokemonDetails.sort((a, b) => a.id - b.id)
 
 	sortedPokemons.forEach(pokemonDetail => {
-		pokemon.intencePokemon(pokemonDetail)
-		listPokemonsOl.innerHTML += convertPokemonToHtmlLi(pokemon.intencePokemon(pokemonDetail))
+		pokemon.instancePokemon(pokemonDetail)
+		listPokemonsOl.innerHTML += convertPokemonToHtmlLi(pokemon.instancePokemon(pokemonDetail))
 	})
 })()
