@@ -1,3 +1,4 @@
+'use strict'
 //------------CÓDIGO REFERENTE AO MENU SANDWHISH------------//
 const menuSuspenso = document.querySelector('.menuSuspenso')
 const closeMenu = document.querySelector('.closeMenu')
@@ -12,7 +13,7 @@ const pathParamDdisabled = 'M6 18L18 6M6 6l12 12'
 const iconHash = document.querySelector('.iconHash')
 const cardSearch = document.querySelector('.cardSearch')
 
-import { gerarPokemonPorIdOrName, mainDetail, dinamizarHtml } from "./main-details.js";
+import { dinamizarHtml, gerarPokemonPorIdOrName, mainDetail } from "./main-details.js";
 const pokeSearchInput = document.querySelector('.pokeSearch')
 const clearButton = document.querySelector('.clearButton')
 const svgSearch = document.querySelector('.svgSearch')
@@ -54,12 +55,13 @@ btnSandwish.addEventListener('click', comportamentoBtnMenuSuspenso())
 closeMenu.addEventListener('click', comportamentoBtnMenuSuspenso())
 //------------CÓDIGO REFERENTE AO ELEMENTO CLEAR INPUT------------//
 svgSearch.addEventListener('click', async function() {
-	const pokemon = await gerarPokemonPorIdOrName(caracteresDigitados[caracteresDigitados.length - 1])
+	const nome = caracteresDigitados[caracteresDigitados.length - 1]
+	const pokemon = await gerarPokemonPorIdOrName(nome)
 	const main = document.querySelector('.main')
-	main.innerHTML = mainDetail()
+
+	main.innerHTML = mainDetail(pokemon)
 	dinamizarHtml(pokemon)
 })
-
 
 pokeSearchInput.addEventListener('input', () => {
 	caracteresDigitados.push((pokeSearchInput.value).trim())

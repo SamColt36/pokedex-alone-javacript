@@ -157,7 +157,7 @@
 	</menuSuspenso>
 	<!--/Menu Suspenso para Mobile-->
 
-	<main class="main relative z-10 rounded-md lg:p-8 xl:rounded-xl xl:max-w-4xl xl:mx-auto xl:px-0 xl:h-min">
+	<div class="main relative z-10 rounded-md lg:p-8 xl:rounded-xl xl:max-w-4xl xl:mx-auto xl:px-0 xl:h-min">
 		<!--Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
 		<span class="spanBlack hidden top-0 left-0 w-screen h-screen bg-black/80 z-30"></span>
 		<!--/Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
@@ -173,7 +173,7 @@
 			</div>
 			<span class="pokemonID righteous text-sm text-white drop-shadow-xl lg:text-base"></span>
 		</nav>
-
+	
 		<div class="border p-2 bg-white rounded-lg">
 			<!--Container com imagens-->
 			<figure class="relative">
@@ -185,34 +185,20 @@
 				<img src="" alt=""
 					class="pokemonSprites mx-auto absolute top-0 right-0 left-0 -translate-y-36 h-64 drop-shadow-md">
 				<!--/Pokemon-->
-				<!--Arrow Left-->
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-					stroke="currentColor"
-					class="w-6 h-6 absolute left-1/4 -translate-y-12 top-0 text-white cursor-pointer drop-shadow-md duration-700 hover:scale-150 hover:transition-transform xs:left-0 sm:left-0 md:left-0">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-				</svg>
-				<!--/Arrow Left-->
-				<!--Arrow Right-->
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-					stroke="currentColor"
-					class="w-6 h-6 absolute right-1/4 -translate-y-12 top-0 text-white cursor-pointer drop-shadow-xl duration-700 hover:scale-150 hover:transition-transform xs:right-0 sm:right-0 md:right-0">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-				</svg>
-				<!--/Arrow Right-->
 			</figure>
 			<!--/Container com imagens-->
 			<!--Seção com informações 'ABOUT'-->
 			<div class="pt-28 space-y-5 px-2">
 				<!--Types-->
 				<ul class="flex-center space-x-3 text-white font-medium">
-					<li class="bg-grass py-1 px-3 rounded-full text-center text-xs w-min lg:text-sm xl:text-lg">
-						Glass</li>
-					<li class="bg-poison py-1 px-3 rounded-full text-center text-xs w-min lg:text-sm xl:text-lg">
-						Poison</li>
+					<li class="text-white py-1 px-3 rounded-full text-center text-xs w-min lg:text-sm xl:text-lg">
+						</li>
+					<li class="text-white py-1 px-3 rounded-full text-center text-xs w-min lg:text-sm xl:text-lg">
+						</li>
 				</ul>
 				<!--/Types-->
 				<!--About-->
-				<h1 class="text-center text-lg font-bold text-grass lg:text-xl xl:text-2xl">About</h1>
+				<h1 class="text-center text-lg font-bold bg-white lg:text-xl xl:text-2xl">About</h1>
 				<!--/About-->
 				<!--PESO, ALTURA E MOVES-->
 				<div>
@@ -221,8 +207,8 @@
 						<li
 							class="relative text-black flex justify-between items-center flex-col self-stretch px-4 xs:text-sm xs:px-2 sm:px-2 sm:text-sm">
 							<section class="flex-center space-x-4 h-2/3">
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-									stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+									stroke="currentColor" class="w-6 h-6">
 									<path stroke-linecap="round" stroke-linejoin="round"
 										d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z">
 								</svg>
@@ -257,72 +243,46 @@
 				<!--/PESO, ALTURA E MOVES-->
 			</div>
 			<!--/Seção com informações 'ABOUT'-->
-			<p
-				class="text-black py-6 px-2 text-sm lg:max-w-lg lg:mx-auto lg:text-base xl:text-lg xl:max-w-2xl xl:mx-auto">
+			<p class="text-black py-6 px-2 text-sm lg:max-w-lg lg:mx-auto lg:text-base xl:text-lg xl:max-w-2xl xl:mx-auto">
 				There is a plant seed on its back right from the day this Pokémon is
 				born. The seed slowly grows larger.
 			</p>
-
-			<header class="text-center text-lg font-bold text-grass lg:text-xl xl:text-2xl" id="header">Base Stats
+	
+			<header class="text-center text-lg font-bold bg-white lg:text-xl xl:text-2xl" id="header">Base Stats
 			</header>
-
+	
 			<!--Tabela com habilidades-->
 			<section
 				class="flex space-x-3 divide-x divide-gray-300 xs:px-2 sm:px-2 md:px-2 lg:max-w-lg lg:mx-auto xl:max-w-2xl xl:mx-auto">
 				<!--LABEL-->
 				<ul class="text-sm font-bold text-right lg:text-base">
-					<li>HP</li>
-					<li>ATK</li>
-					<li>DEF</li>
-					<li>SATK</li>
-					<li>SDEF</li>
-					<li>SPD</li>
+					<li class="bg-white">HP</li>
+					<li class="bg-white">ATK</li>
+					<li class="bg-white">DEF</li>
+					<li class="bg-white">SATK</li>
+					<li class="bg-white">SDEF</li>
+					<li class="bg-white">SPD</li>
 				</ul>
 				<!--/LABEL-->
 				<div class="flex w-full">
 					<ul class="text-sm text-black px-2 w-full lg:text-base">
 						<li class="flex-center space-x-4 relative w-full">
-							<p class="pokemonStat"></p>
+							<p class="pokemonStat">20</p>
 							<div class="flex items-center relative w-full border h-2 bg-gray-200 rounded-full">
-								<span class="inline-block pokemonType rounded-full h-2 statsValueBar"></span>
+								<span class="inline-block pokemonType rounded-full h-2 w-[10%]"></span>
 							</div>
 						</li>
+						
 						<li class="flex-center space-x-4 relative w-full">
-							<p class="pokemonStat"></p>
-							<div class="flex items-center relative w-full border h-2 bg-gray-200 rounded-full">
-								<span class="inline-block pokemonType rounded-full h-2 statsValueBar"></span>
-							</div>
-						</li>
-						<li class="flex-center space-x-4 relative w-full">
-							<p class="pokemonStat"></p>
-							<div class="flex items-center relative w-full border h-2 bg-gray-200 rounded-full">
-								<span class="inline-block pokemonType rounded-full h-2 statsValueBar"></span>
-							</div>
-						</li>
-						<li class="flex-center space-x-4 relative w-full">
-							<p class="pokemonStat"></p>
-							<div class="flex items-center relative w-full border h-2 bg-gray-200 rounded-full">
-								<span class="inline-block pokemonType rounded-full h-2 statsValueBar"></span>
-							</div>
-						</li>
-						<li class="flex-center space-x-4 relative w-full">
-							<p class="pokemonStat"></p>
-							<div class="flex items-center relative w-full border h-2 bg-gray-200 rounded-full">
-								<span class="inline-block pokemonType rounded-full h-2 statsValueBar"></span>
-							</div>
-						</li>
-						<li class="flex-center space-x-4 relative w-full">
-							<p class="pokemonStat"></p>
-							<div class="flex items-center relative w-full border h-2 bg-gray-200 rounded-full">
-								<span class="inline-block pokemonType rounded-full h-2 statsValueBar"></span>
-							</div>
+							<label for="file" class="pokemonStat">59</label>
+							<progress id="file" value="59" max="100" class="h-2 bg-gray-100 text-black"></progress>
 						</li>
 					</ul>
 				</div>
 			</section>
 			<!--Tabela com habilidades-->
 		</div>
-	</main>
+	</div>
 
 	<!--Rodapé-->
 	<footer class="bg-stone-900 text-gray-50 py-16 xl:max-w-4xl xl:mx-auto xl:px-0 ">

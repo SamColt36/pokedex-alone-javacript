@@ -1,3 +1,4 @@
+'use strict'
 class PokemonService {
 	constructor() {
 		this._baseUrl = 'https://pokeapi.co/api/v2/'
@@ -8,7 +9,10 @@ class PokemonService {
 		const urlPokemon = `${this._urlPokemon}${nameOrId}`;
 		const response = await fetch(urlPokemon);
 
-		if (!response.ok) throw new Error(`Erro ao buscar detalhes do Pokémon: ${response.status}`)
+		if (!response.ok) {
+			swal(`Erro ao buscar detalhes do Pokémon: ${nameOrId}`)
+			throw new Error(`Erro ao buscar detalhes do Pokémon: ${response.status}`)
+		}
 
 		const data = await response.json();
 		return data;
@@ -20,7 +24,7 @@ class PokemonService {
 		return data
 	}
 
-	async getPokemons(limit = 9, offset = 0) {
+	async getPokemons(limit = 1, offset = 0) {
 		const url = `${this._baseUrl}pokemon?limit=${limit}&offset=${offset}`
 		const response = await fetch(url)
 

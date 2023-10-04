@@ -655,16 +655,8 @@ video {
   left: 0px;
 }
 
-.left-1\/4 {
-  left: 25%;
-}
-
 .right-0 {
   right: 0px;
-}
-
-.right-1\/4 {
-  right: 25%;
 }
 
 .top-0 {
@@ -953,6 +945,10 @@ video {
   width: 2.25rem;
 }
 
+.w-\[10\%\] {
+  width: 10%;
+}
+
 .w-full {
   width: 100%;
 }
@@ -1021,11 +1017,6 @@ video {
 
 .-translate-x-2\/3 {
   --tw-translate-x: -66.666667%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-y-12 {
-  --tw-translate-y: -3rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2052,6 +2043,11 @@ video {
   background-color: rgba(220, 10, 45, 1);
 }
 
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -2875,24 +2871,12 @@ video {
   }
 }
 
-.hover\:scale-150:hover {
-  --tw-scale-x: 1.5;
-  --tw-scale-y: 1.5;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .hover\:font-bold:hover {
   font-weight: 700;
 }
 
 .hover\:font-medium:hover {
   font-weight: 500;
-}
-
-.hover\:transition-transform:hover {
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
 }
 
 .before\:hover\:text-center:hover::before {
@@ -2914,14 +2898,6 @@ video {
 }
 
 @media (min-width: 300px) and (max-width: 425px) {
-  .sm\:left-0 {
-    left: 0px;
-  }
-
-  .sm\:right-0 {
-    right: 0px;
-  }
-
   .sm\:inline-block {
     display: inline-block;
   }
@@ -2960,14 +2936,6 @@ video {
 }
 
 @media (min-width: 426px) and (max-width: 767px) {
-  .md\:left-0 {
-    left: 0px;
-  }
-
-  .md\:right-0 {
-    right: 0px;
-  }
-
   .md\:inline-block {
     display: inline-block;
   }
@@ -3140,14 +3108,6 @@ video {
 }
 
 @media (max-width: 300px) {
-  .xs\:left-0 {
-    left: 0px;
-  }
-
-  .xs\:right-0 {
-    right: 0px;
-  }
-
   .xs\:inline-block {
     display: inline-block;
   }

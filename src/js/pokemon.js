@@ -1,3 +1,4 @@
+'use strict'
 class Pokemon {
 	constructor(name, id, types, weight, height, statsValue, sprites) {
 		this._name = name
@@ -23,12 +24,12 @@ class Pokemon {
 
 	get weight() {
 		// conversão de hg para kg
-		return this._weight / 10
+		return (this._weight / 10)
 	}
 
 	get height() {
 		// conversão de dm para m
-		return this._height / 10
+		return (this._height / 10)
 	}
 
 	get statsValue() {
@@ -55,15 +56,5 @@ class Pokemon {
 		const pokemon = new Pokemon(name, id, types, weight, height, statsValue, sprites)
 
 		return pokemon
-	}
-
-	formatarNumeros(number) {
-		const numberString = String(number)
-
-		if (numberString.length === 1) return `000${numberString}`
-		else if (numberString.length === 2) return `00${numberString}`
-		else if (numberString.length === 3) return `0${numberString}`
-		else if (numberString.length === 4) return `${numberString}`
-		else return numberString
 	}
 }
