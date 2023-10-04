@@ -945,10 +945,6 @@ video {
   width: 2.25rem;
 }
 
-.w-\[10\%\] {
-  width: 10%;
-}
-
 .w-full {
   width: 100%;
 }
@@ -2041,11 +2037,6 @@ video {
 
 .bg-body {
   background-color: rgba(220, 10, 45, 1);
-}
-
-.bg-gray-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
 .bg-gray-200 {

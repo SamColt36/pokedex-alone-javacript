@@ -1,11 +1,12 @@
 'use strict'
 //------------CÓDIGO REFERENTE AO MENU SANDWHISH------------//
+import { dinamizarHtml, gerarPokemonPorIdOrName, mainDetail } from "./main-details.js";
+
 const menuSuspenso = document.querySelector('.menuSuspenso')
 const closeMenu = document.querySelector('.closeMenu')
 const btnSandwish = document.querySelector('.btnSandwish')
 const pathElement = document.querySelector('.btnSandwishSvgPath')
 const spanBlack = document.querySelector('.spanBlack')
-
 
 const pathParamDactived = 'M3.75 9h16.5m-16.5 6.75h16.5'
 const pathParamDdisabled = 'M6 18L18 6M6 6l12 12'
@@ -13,7 +14,6 @@ const pathParamDdisabled = 'M6 18L18 6M6 6l12 12'
 const iconHash = document.querySelector('.iconHash')
 const cardSearch = document.querySelector('.cardSearch')
 
-import { dinamizarHtml, gerarPokemonPorIdOrName, mainDetail } from "./main-details.js";
 const pokeSearchInput = document.querySelector('.pokeSearch')
 const clearButton = document.querySelector('.clearButton')
 const svgSearch = document.querySelector('.svgSearch')
@@ -28,8 +28,7 @@ btnSandwish.classList.add('transition', 'duration-700', 'transition-all', 'ease-
 menuSuspenso.classList.add('transition', 'duration-700', 'transition-all', 'ease-in-out')
 
 function toggleClass() {
-	spanBlack.classList.toggle('fixed')
-	spanBlack.classList.toggle('hidden')
+	spanBlack.classList.toggle('fixed', 'hidden')
 
 	btnSandwish.classList.toggle('text-white', 'text-black')
 	iconHash.classList.toggle('z-50')
@@ -67,7 +66,6 @@ pokeSearchInput.addEventListener('input', () => {
 	caracteresDigitados.push((pokeSearchInput.value).trim())
 	pokeSearchInput.value === '' ? clearButton.classList.add('inline-block') : clearButton.classList.remove('invisible')
 })
-
 
 clearButton.addEventListener('click', () => {
 	pokeSearchInput.value = ''

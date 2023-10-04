@@ -1,8 +1,8 @@
 'use strict'
+import { formatarNumeros } from "./main-details.js"
 const listPokemonsOl = document.getElementById('listPokemons')
 const service = new PokemonService()
 const pokemon = new Pokemon()
-import { formatarNumeros } from "./main-details.js"
 
 function convertPokemonToHtmlLi({ types, id, name, sprites }) {
 	const secondType = types[1] ? `<li class="liType bg-white/25 py-1 px-3 rounded-full text-center text-xs text-white w-min lg:text-sm">${types[1]}</li>` : ''
@@ -33,13 +33,12 @@ function convertPokemonToHtmlLi({ types, id, name, sprites }) {
 								<!--Imagem do Pokemon-->
 								<img class="max-w-full h-20 self-end z-20 col-span-1 lg:h-24"
 									src="${sprites}"
-									alt="Imagem alusiva ao pokemon ${name}.">
+									alt="Imagem alusiva ao pokemon ${name}">
 								<!--/Imagem do Pokemon-->
 							</section>
 						</li>
 						<!--/Card com Pokemon-->
-						<!--/Li Card com Pokemon-->
-			`
+						<!--/Li Card com Pokemon-->	`
 }
 
 

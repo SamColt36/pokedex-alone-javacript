@@ -39,7 +39,6 @@ export function dinamizarHtml(pokemon) {
 
 		pokemonStatsValueBar[j].style.width = `${value}%`
 	}
-
 }
 
 export async function gerarPokemonPorIdOrName(idOrName) {
@@ -51,10 +50,10 @@ export async function gerarPokemonPorIdOrName(idOrName) {
 export function mainDetail({ name, id, types, sprites }) {
 	const body = document.getElementById('body')
 	const type = types[0]
-	body.classList.remove('bg-body')
-	body.classList.add(type)
 	const secondType = types[1] ? `<li class="text-white py-1 px-3 rounded-full text-center text-xs w-min lg:text-sm xl:text-lg">${types[1]}</li>` : ''
 
+	body.classList.remove('bg-body')
+	body.classList.add(type)
 
 	return `
 	<div class="main relative z-10 rounded-md lg:p-8 xl:rounded-xl xl:max-w-4xl xl:mx-auto xl:px-0 xl:h-min">

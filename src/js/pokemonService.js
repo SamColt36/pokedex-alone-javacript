@@ -6,16 +6,16 @@ class PokemonService {
 	}
 
 	async getPokemonDetails(nameOrId) {
-		const urlPokemon = `${this._urlPokemon}${nameOrId}`;
-		const response = await fetch(urlPokemon);
+		const urlPokemon = `${this._urlPokemon}${nameOrId}`
+		const response = await fetch(urlPokemon)
 
 		if (!response.ok) {
 			swal(`Erro ao buscar detalhes do Pokémon: ${nameOrId}`)
 			throw new Error(`Erro ao buscar detalhes do Pokémon: ${response.status}`)
 		}
 
-		const data = await response.json();
-		return data;
+		const data = await response.json()
+		return data
 	}
 
 	async getPokemon(url) {
@@ -24,7 +24,7 @@ class PokemonService {
 		return data
 	}
 
-	async getPokemons(limit = 1, offset = 0) {
+	async getPokemons(limit = 9, offset = 0) {
 		const url = `${this._baseUrl}pokemon?limit=${limit}&offset=${offset}`
 		const response = await fetch(url)
 
