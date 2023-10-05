@@ -1928,6 +1928,11 @@ video {
   border-top-right-radius: 0.75rem;
 }
 
+.rounded-t-lg {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
 .rounded-bl {
   border-bottom-left-radius: 0.25rem;
 }
@@ -2237,10 +2242,6 @@ video {
 
 .pb-1 {
   padding-bottom: 0.25rem;
-}
-
-.pb-4 {
-  padding-bottom: 1rem;
 }
 
 .pt-28 {
@@ -3077,9 +3078,9 @@ video {
     border-radius: 0.75rem;
   }
 
-  .xl\:bg-white {
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  .xl\:rounded-t-xl {
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
   }
 
   .xl\:px-0 {

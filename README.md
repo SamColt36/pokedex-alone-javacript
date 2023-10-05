@@ -4,9 +4,9 @@ Este é um projeto simples de Pokedex desenvolvido usando HTML, CSS com Tailwind
 
 ## Status do Projeto
 
-[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-blue.svg)]()
+[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-blue.svg)](https://samcolt36.github.io/consumo-api-js/)
 
-O projeto está hospedado no GitHub Pages. Você pode acessá-lo [aqui]().
+O projeto está hospedado no GitHub Pages. Você pode acessá-lo [aqui](https://samcolt36.github.io/consumo-api-js/).
 
 ## Como Executar Localmente
 
@@ -25,6 +25,10 @@ Caso contrário, é possível pelo SSH
 2) Navegue até o diretório do projeto:
 ``` bash
 cd 'Pokedex Alone'
+```
+3) Rode o arquivo compiler.sh no terminal **bash** para gerar dinamicamente o css gerado pelo tailwindcss
+``` bash
+./compiler.sh
 ```
 Abra o arquivo **index.html** em seu navegador da web.
 

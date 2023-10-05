@@ -56,11 +56,11 @@ export function mainDetail({ name, id, types, sprites }) {
 	body.classList.add(type)
 
 	return `
-	<div class="main relative z-10 rounded-md lg:p-8 xl:rounded-xl xl:max-w-4xl xl:mx-auto xl:px-0 xl:h-min">
+	<div class="relative z-10 lg:px-8 xl:max-w-4xl xl:mx-auto xl:px-0 xl:h-min">
 		<!--Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
 		<span class="spanBlack hidden top-0 left-0 w-screen h-screen bg-black/80 z-30"></span>
 		<!--/Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
-		<nav class="mb-32 flex justify-between items-center p-4">
+		<nav class="mb-32 ${type} flex justify-between items-center p-4">
 			<div class="flex space-x-3">
 				<a href="../../index.html">
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -73,7 +73,7 @@ export function mainDetail({ name, id, types, sprites }) {
 			<span class="righteous text-sm text-white drop-shadow-xl lg:text-base">#${formatarNumeros(id)}</span>
 		</nav>
 
-		<div class="border p-2 bg-white rounded-lg">
+		<div class="border p-2 bg-white rounded-t-xl">
 			<!--Container com imagens-->
 			<figure class="relative">
 				<!--Pokeball-->
