@@ -70,7 +70,7 @@ export function mainDetail({ name, id, types, sprites }) {
 				</a>
 				<h1 class="righteous text-xl text-white drop-shadow-xl lg:text-2xl">${name}</h1>
 			</div>
-			<span class="righteous text-sm text-white drop-shadow-xl lg:text-base">#${id}</span>
+			<span class="righteous text-sm text-white drop-shadow-xl lg:text-base">#${formatarNumeros(id)}</span>
 		</nav>
 
 		<div class="border p-2 bg-white rounded-lg">
