@@ -48,19 +48,16 @@ export async function gerarPokemonPorIdOrName(idOrName) {
 }
 
 export function mainDetail({ name, id, types, sprites }) {
-	const body = document.getElementById('body')
+	body.classList.remove('bg-body')
 	const type = types[0]
 	const secondType = types[1] ? `<li class="text-white py-1 px-3 rounded-full text-center text-xs w-min lg:text-sm xl:text-lg">${types[1]}</li>` : ''
-
-	body.classList.remove('bg-body')
-	body.classList.add(type)
 
 	return `
 	<div class="relative z-10 lg:px-8 xl:max-w-4xl xl:mx-auto xl:px-0 xl:h-min">
 		<!--Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
 		<span class="spanBlack hidden top-0 left-0 w-screen h-screen bg-black/80 z-30"></span>
 		<!--/Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
-		<nav class="mb-32 ${type} flex justify-between items-center p-4">
+		<nav class="mb-32 flex justify-between items-center p-4 ${type}" id="nav">
 			<div class="flex space-x-3">
 				<a href="../../index.html">
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"

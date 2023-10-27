@@ -46,8 +46,7 @@ function convertPokemonToHtmlLi({ types, id, name, sprites }) {
 	const fetch = await service.getPokemons()
 	const urlsObject = await fetch.map(i => i.url)
 
-	const pokemonDetails = await Promise.all(
-		urlsObject.map(e => service.getPokemon(e)))
+	const pokemonDetails = await Promise.all(urlsObject.map(e => service.getPokemon(e)))
 
 	const sortedPokemons = pokemonDetails.sort((a, b) => a.id - b.id)
 
