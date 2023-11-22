@@ -41,6 +41,10 @@ function convertPokemonToHtmlLi({ types, id, name, sprites }) {
 						<!--/Li Card com Pokemon-->	`
 }
 
+function ocultarPlacehold() {
+	const placehold = document.querySelectorAll('.placehold')
+	return Array.from(placehold).forEach(e => e.setAttribute('style', 'display: none'))
+}
 
 (async function gerarPokemon() {
 	const fetch = await service.getPokemons()
@@ -49,7 +53,7 @@ function convertPokemonToHtmlLi({ types, id, name, sprites }) {
 	const pokemonDetails = await Promise.all(urlsObject.map(e => service.getPokemon(e)))
 
 	const sortedPokemons = pokemonDetails.sort((a, b) => a.id - b.id)
-
+	ocultarPlacehold()
 	sortedPokemons.forEach(pokemonDetail => {
 		pokemon.instancePokemon(pokemonDetail)
 		listPokemonsOl.innerHTML += convertPokemonToHtmlLi(pokemon.instancePokemon(pokemonDetail))

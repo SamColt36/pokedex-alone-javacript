@@ -3,12 +3,7 @@ const service = new PokemonService()
 const pokemon = new Pokemon()
 
 export function formatarNumeros(number) {
-	const numberString = String(number)
-
-	if (numberString.length === 1) return `00${numberString}`
-	else if (numberString.length === 2) return `0${numberString}`
-	else if (numberString.length >= 3) return `${numberString}`
-	else return numberString
+	return String(number).padStart(4, '0')
 }
 
 export function dinamizarHtml(pokemon) {
