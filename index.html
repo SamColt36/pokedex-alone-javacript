@@ -19,7 +19,7 @@
 	<link rel="icon" type="image/x-icon" href="./favicon.ico" sizes="96x96">
 </head>
 
-<body class="relative font-sans bg-body" id="body">
+<body class="bg-body" id="body">
 	<!--Box navegação-->
 	<header class="relative p-2 lg:px-8 xl:max-w-4xl xl:mx-auto">
 		<!--Div criada para fins de alinhamento-->
@@ -167,19 +167,11 @@
 		<!--/Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
 		<ol class="pokemonList grid grid-cols-2 justify-center bg-white rounded-t-lg z-30 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4"
 			id="listPokemons">
-			<li class="p-2 placehold"><img src="https://placehold.co/400x400/png" alt="Imagem padrão de carregamento."></li>
-			<li class="p-2 placehold"><img src="https://placehold.co/400x400/png" alt="Imagem padrão de carregamento."></li>
-			<li class="p-2 placehold"><img src="https://placehold.co/400x400/png" alt="Imagem padrão de carregamento."></li>
-			<li class="p-2 placehold"><img src="https://placehold.co/400x400/png" alt="Imagem padrão de carregamento."></li>
-			<li class="p-2 placehold"><img src="https://placehold.co/400x400/png" alt="Imagem padrão de carregamento."></li>
-			<li class="p-2 placehold"><img src="https://placehold.co/400x400/png" alt="Imagem padrão de carregamento."></li>
-			<li class="p-2 placehold"><img src="https://placehold.co/400x400/png" alt="Imagem padrão de carregamento."></li>
-			<li class="p-2 placehold"><img src="https://placehold.co/400x400/png" alt="Imagem padrão de carregamento."></li>
-			<li class="p-2 placehold"><img src="https://placehold.co/400x400/png" alt="Imagem padrão de carregamento."></li>
-
-			<!--Li Card com Pokemon-->
-			<!--Iserção dinâmica--><!--/Iserção dinâmica-->
-			<!--/Li Card com Pokemon-->
+			<img class="placehold p-3 pb-1" src="https://placehold.co/200x200/png" alt="Imagem padrão de carregamento.">
+			<img class="placehold p-3 pb-1" src="https://placehold.co/200x200/png" alt="Imagem padrão de carregamento.">
+			<img class="placehold p-3 pb-1" src="https://placehold.co/200x200/png" alt="Imagem padrão de carregamento.">
+			<img class="placehold p-3 pb-1" src="https://placehold.co/200x200/png" alt="Imagem padrão de carregamento.">
+			<img class="placehold p-3 pb-1" src="https://placehold.co/200x200/png" alt="Imagem padrão de carregamento.">
 		</ol>
 	</main>
 	<!--Lista de Pokemons-->
@@ -215,10 +207,12 @@
 
 	<!-- Esse script do site 'unpkg.com' cria um window.alert() estilizado -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="./src/js/jquery-3.7.1.min.js"></script>
 	<script src="./src/js/pokemonService.js"></script>
 	<script src="./src/js/pokemon.js"></script>
+	<script type="module" src="./src/js/dom.js"></script>
 	<script type="module" src="./src/js/card.js"></script>
-	<script type="module" src="./src/js/btn-clear.js"></script>
+	<script type="module" src="./src/js/btn-search.js"></script>
 	<script type="module" src="./src/js/btn-sandwish.js"></script>
 	<script type="module" src="./src/js/main.js"></script>
 	<script type="module" src="./src/js/main-details.js"></script>

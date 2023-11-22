@@ -1,49 +1,49 @@
 'use strict'
-const service = new PokemonService()
-const pokemon = new Pokemon()
+import { body } from './dom.js'
 
-export function formatarNumeros(number) {
+const service = new PokemonService()
+
+function formatarNumeros(number) {
 	return String(number).padStart(4, '0')
 }
 
-export function dinamizarHtml(pokemon) {
-	const pokemonType = document.querySelectorAll('.pokemonType')
-	const pokemonName = document.querySelectorAll('.pokemonName')
-	const pokemonID = document.querySelectorAll('.pokemonID')
-	const pokemonSprites = document.querySelectorAll('.pokemonSprites')
-	const pokemonWeight = document.querySelector('.pokemonWeight')
-	const pokemonHeight  = document.querySelector('.pokemonHeight')
-	const pokemonStatsValue = document.querySelectorAll('.pokemonStat')
-	const pokemonStatsValueBar = document.querySelectorAll('.statsValueBar')
+function dinamizarHtml(pokemon) {
+	const pokemonType = $('.pokemonType')
+	const pokemonName = $('.pokemonName')
+	const pokemonID = $('.pokemonID')
+	const pokemonSprites = $('.pokemonSprites')
+	const pokemonWeight = $('.pokemonWeight')
+	const pokemonHeight = $('.pokemonHeight')
+	const pokemonStatsValue = $('.pokemonStat')
+	const pokemonStatsValueBar = $('.statsValueBar')
 
-	pokemonType.forEach(i => i.classList.toggle(`${pokemon.types[0]}`))
-	pokemonName.forEach(i => i.innerHTML = `${pokemon.name}`)
-	pokemonID.forEach(i => i.innerHTML = `#${formatarNumeros(pokemon.id)}`)
-	pokemonSprites.forEach(i => {
-		i.setAttribute('src', `${pokemon.sprites}`)
-		i.setAttribute('alt', `${pokemon.name}`)
+	pokemonType.toggleClass(`${pokemon.types[0]}`)
+	pokemonName.text(`${pokemon.name}`)
+	pokemonID.text(`#${formatarNumeros(pokemon.id)}`)
+	pokemonSprites.attr({
+		'src': `${pokemon.sprites}`,
+		'alt': `${pokemon.name}`
 	})
-	pokemonWeight.innerHTML = `${pokemon.weight} kg`
-	pokemonHeight.innerHTML = `${pokemon.height} m`
+	pokemonWeight.text(`${pokemon.weight} kg`)
+	pokemonHeight.text(`${pokemon.height} m`)
 
-	
+
 	for (let j = 0; j < pokemonStatsValue.length; j++) {
-		const element = pokemonStatsValue[j]
 		const value = (pokemon.statsValue)[j]
-		element.innerHTML = formatarNumeros(value)
 
+		pokemonStatsValue[j].textContent = (formatarNumeros(value))
 		pokemonStatsValueBar[j].style.width = `${value}%`
 	}
 }
 
-export async function gerarPokemonPorIdOrName(idOrName) {
+async function gerarPokemonPorIdOrName(pokemon, idOrName) {
 	const pokemonDetails = await service.getPokemonDetails(idOrName)
-	const pokemonInstanciado = pokemon.instancePokemon(pokemonDetails)
-	return pokemonInstanciado
+	return pokemon.instancePokemon(pokemonDetails)
 }
 
-export function mainDetail({ name, id, types, sprites }) {
-	body.classList.remove('bg-body')
+function mainDetail({ name, id, types, sprites }) {
+	$(body).removeClass('bg-body')
+
 	const type = types[0]
 	const secondType = types[1] ? `<li class="text-white py-1 px-3 rounded-full text-center text-xs w-min lg:text-sm xl:text-lg">${types[1]}</li>` : ''
 
@@ -199,3 +199,5 @@ export function mainDetail({ name, id, types, sprites }) {
 	</div>
 	`
 }
+
+export { dinamizarHtml, formatarNumeros, gerarPokemonPorIdOrName, mainDetail }

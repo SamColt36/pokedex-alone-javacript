@@ -37,7 +37,13 @@ class Pokemon {
 	}
 
 	get sprites() {
-		return this._sprites
+		// Validação para caso dê bug na busca da imagem, o que ocorre no pokemon id 1013
+		if (this._sprites == null) {
+			return ('https://placehold.co/300x300')
+		}
+		else {
+			return this._sprites
+		}
 	}
 
 	capitalize(string) {
