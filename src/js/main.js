@@ -1,13 +1,17 @@
-'use strict'
-import { formatarNumeros } from "./main-details.js"
-const listPokemonsOl = document.getElementById('listPokemons')
-const service = new PokemonService()
+"use strict";
+import { formatNumbers } from "./main-details.js";
+const listPokemonsOl = document.getElementById("listPokemons");
+const service = new PokemonService();
 
-function convertPokemonToHtmlLi({ types, id, name, sprites }) {
-	const secondType = types[1] ? `<li class="liType bg-white/25 py-1 px-3 rounded-full text-center text-xs text-white w-min lg:text-sm">${types[1]}</li>` : ''
-	return `
+const convertPokemonToHtmlLi = ({ types, id, name, sprites }) => {
+  const secondType = types[1]
+    ? `<li class="liType bg-white/25 py-1 px-3 rounded-full text-center text-xs text-white w-min lg:text-sm">${types[1]}</li>`
+    : "";
+  return `
 				<!--Li Card com Pokemon-->
-					<li class="relative ${types[0]} flex flex-col m-2 p-3 pb-1 text-white rounded-lg overflow-hidden shadow-lg shadow-black/20 sm:min-w-[40vw]">
+					<li class="relative ${
+            types[0]
+          } flex flex-col m-2 p-3 pb-1 text-white rounded-lg overflow-hidden shadow-lg shadow-black/20 sm:min-w-[40vw]">
 						<!--Imagens de background-->
 						<figure>
 							<img src="./src/assets/background-pokeball-rectangle.png" alt="Ilustração de retângulo opaco"
@@ -17,7 +21,9 @@ function convertPokemonToHtmlLi({ types, id, name, sprites }) {
 						</figure>
 						<!--/Imagens de background-->
 						<!--ID do Pokemon-->
-						<span class="text-right text-black font-medium opacity-10 z-20 lg:text-lg">#${formatarNumeros(id)}</span>
+						<span class="text-right text-black font-medium opacity-10 z-20 lg:text-lg">#${formatNumbers(
+              id
+            )}</span>
 						<!--/ID do Pokemon-->
 						<section class="grid grid-cols-2">
 							<!--Nome do Pokemon-->
@@ -25,7 +31,9 @@ function convertPokemonToHtmlLi({ types, id, name, sprites }) {
 							<!--/Nome do Pokemon-->
 							<!--Types-->
 							<ul class="flex flex-col space-y-2 col-span-1">
-								<li class="bg-white/25 py-1 px-3 rounded-full text-center text-xs text-white w-min lg:text-sm">${types[0]}</li>
+								<li class="bg-white/25 py-1 px-3 rounded-full text-center text-xs text-white w-min lg:text-sm">${
+                  types[0]
+                }</li>
 								${secondType}
 							</ul>
 							<!--/Types-->
@@ -37,27 +45,31 @@ function convertPokemonToHtmlLi({ types, id, name, sprites }) {
 						</section>
 					</li>
 					<!--/Card com Pokemon-->
-				<!--/Li Card com Pokemon-->	`
-}
+				<!--/Li Card com Pokemon-->	`;
+};
 
-function ocultarPlacehold() {
-	const placehold = document.querySelectorAll('.placehold')
-	return Array.from(placehold).forEach(e => e.remove())
-}
+const hidePlacehold = () => {
+  const placehold = document.querySelectorAll(".placehold");
+  return Array.from(placehold).forEach((e) => e.remove());
+};
 
-async function gerarPokemon() {
-	const fetch = await service.getPokemons()
-	const urlsObject = await fetch.map(i => i.url)
+const generatePokemon = async () => {
+  const fetch = await service.getPokemons();
+  const urlsObject = await fetch.map((i) => i.url);
 
-	const pokemonDetails = await Promise.all(urlsObject.map(e => service.getPokemon(e)))
+  const pokemonDetails = await Promise.all(
+    urlsObject.map((e) => service.getPokemon(e))
+  );
 
-	const sortedPokemons = pokemonDetails.sort((a, b) => a.id - b.id)
-	ocultarPlacehold()
+  const sortedPokemons = pokemonDetails.sort((a, b) => a.id - b.id);
+  hidePlacehold();
 
-	sortedPokemons.forEach(pokemonDetail => {
-		(new Pokemon()).instancePokemon(pokemonDetail)
-		listPokemonsOl.innerHTML += convertPokemonToHtmlLi((new Pokemon()).instancePokemon(pokemonDetail))
-	})
-}
+  sortedPokemons.forEach((pokemonDetail) => {
+    new Pokemon().instancePokemon(pokemonDetail);
+    listPokemonsOl.innerHTML += convertPokemonToHtmlLi(
+      new Pokemon().instancePokemon(pokemonDetail)
+    );
+  });
+};
 
-gerarPokemon()
+generatePokemon();

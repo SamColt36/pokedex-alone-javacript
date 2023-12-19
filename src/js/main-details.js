@@ -1,53 +1,54 @@
-'use strict'
-import { body } from './dom.js'
+"use strict";
+import { body } from "./dom.js";
 
-const service = new PokemonService()
+const service = new PokemonService();
 
-function formatarNumeros(number) {
-	return String(number).padStart(4, '0')
-}
+const formatNumbers = (number) => {
+  return String(number).padStart(4, "0");
+};
 
-function dinamizarHtml(pokemon) {
-	const pokemonType = $('.pokemonType')
-	const pokemonName = $('.pokemonName')
-	const pokemonID = $('.pokemonID')
-	const pokemonSprites = $('.pokemonSprites')
-	const pokemonWeight = $('.pokemonWeight')
-	const pokemonHeight = $('.pokemonHeight')
-	const pokemonStatsValue = $('.pokemonStat')
-	const pokemonStatsValueBar = $('.statsValueBar')
+const streamlineHtml = (pokemon) => {
+  const pokemonType = $(".pokemonType");
+  const pokemonName = $(".pokemonName");
+  const pokemonID = $(".pokemonID");
+  const pokemonSprites = $(".pokemonSprites");
+  const pokemonWeight = $(".pokemonWeight");
+  const pokemonHeight = $(".pokemonHeight");
+  const pokemonStatsValue = $(".pokemonStat");
+  const pokemonStatsValueBar = $(".statsValueBar");
 
-	pokemonType.toggleClass(`${pokemon.types[0]}`)
-	pokemonName.text(`${pokemon.name}`)
-	pokemonID.text(`#${formatarNumeros(pokemon.id)}`)
-	pokemonSprites.attr({
-		'src': `${pokemon.sprites}`,
-		'alt': `${pokemon.name}`
-	})
-	pokemonWeight.text(`${pokemon.weight} kg`)
-	pokemonHeight.text(`${pokemon.height} m`)
+  pokemonType.toggleClass(`${pokemon.types[0]}`);
+  pokemonName.text(`${pokemon.name}`);
+  pokemonID.text(`#${formatNumbers(pokemon.id)}`);
+  pokemonSprites.attr({
+    src: `${pokemon.sprites}`,
+    alt: `${pokemon.name}`,
+  });
+  pokemonWeight.text(`${pokemon.weight} kg`);
+  pokemonHeight.text(`${pokemon.height} m`);
 
+  for (let j = 0; j < pokemonStatsValue.length; j++) {
+    const value = pokemon.statsValue[j];
 
-	for (let j = 0; j < pokemonStatsValue.length; j++) {
-		const value = (pokemon.statsValue)[j]
+    pokemonStatsValue[j].textContent = formatNumbers(value);
+    pokemonStatsValueBar[j].style.width = `${value}%`;
+  }
+};
 
-		pokemonStatsValue[j].textContent = (formatarNumeros(value))
-		pokemonStatsValueBar[j].style.width = `${value}%`
-	}
-}
+const generatePokemonByIdOrName = async (pokemon, idOrName) => {
+  const pokemonDetails = await service.getPokemonDetails(idOrName);
+  return pokemon.instancePokemon(pokemonDetails);
+};
 
-async function gerarPokemonPorIdOrName(pokemon, idOrName) {
-	const pokemonDetails = await service.getPokemonDetails(idOrName)
-	return pokemon.instancePokemon(pokemonDetails)
-}
+const mainDetail = ({ name, id, types, sprites }) => {
+  $(body).removeClass("bg-body");
 
-function mainDetail({ name, id, types, sprites }) {
-	$(body).removeClass('bg-body')
+  const type = types[0];
+  const secondType = types[1]
+    ? `<li class="text-white py-1 px-3 rounded-full text-center text-xs w-min lg:text-sm xl:text-lg">${types[1]}</li>`
+    : "";
 
-	const type = types[0]
-	const secondType = types[1] ? `<li class="text-white py-1 px-3 rounded-full text-center text-xs w-min lg:text-sm xl:text-lg">${types[1]}</li>` : ''
-
-	return `
+  return `
 	<div class="relative z-10 lg:px-8 xl:max-w-4xl xl:mx-auto xl:px-0 xl:h-min">
 		<!--Esse span é o responsável por deixar a tela escura quando o menu suspenso está ativado-->
 		<span class="spanBlack hidden top-0 left-0 w-screen h-screen bg-black/80 z-30"></span>
@@ -62,7 +63,9 @@ function mainDetail({ name, id, types, sprites }) {
 				</a>
 				<h1 class="righteous text-xl text-white drop-shadow-xl lg:text-2xl">${name}</h1>
 			</div>
-			<span class="righteous text-sm text-white drop-shadow-xl lg:text-base">#${formatarNumeros(id)}</span>
+			<span class="righteous text-sm text-white drop-shadow-xl lg:text-base">#${formatNumbers(
+        id
+      )}</span>
 		</nav>
 
 		<div class="border p-2 bg-white rounded-t-xl">
@@ -197,7 +200,7 @@ function mainDetail({ name, id, types, sprites }) {
 			<!--Tabela com habilidades-->
 		</div>
 	</div>
-	`
-}
+	`;
+};
 
-export { dinamizarHtml, formatarNumeros, gerarPokemonPorIdOrName, mainDetail }
+export { streamlineHtml, formatNumbers, generatePokemonByIdOrName, mainDetail };

@@ -1,44 +1,50 @@
-'use strict'
-import { dinamizarHtml, gerarPokemonPorIdOrName, mainDetail } from "./main-details.js"
-import { body, svgSearch, pokeSearchInput, clearButton, main } from './dom.js'
+"use strict";
+import {
+  streamlineHtml,
+  mainDetail,
+  generatePokemonByIdOrName,
+} from "./main-details.js";
+import { body, svgSearch, pokeSearchInput, clearButton, main } from "./dom.js";
 
-const caracteresDigitados = new Array()
-let count = 0
+const caracteresDigitados = new Array();
+let count = 0;
 
-async function perquisarPokemon() {
-	count++
-	const nome = caracteresDigitados[caracteresDigitados.length - 1]
-	const pokemon = await gerarPokemonPorIdOrName(new Pokemon(), nome)
-	main.html(mainDetail(pokemon))
+const searchPokemon = async () => {
+  count++;
+  const nome = caracteresDigitados[caracteresDigitados.length - 1];
+  const pokemon = await generatePokemonByIdOrName(new Pokemon(), nome);
+  main.html(mainDetail(pokemon));
 
-	dinamizarHtml(pokemon)
-	alterarBackgroundBodyDinamicamente(pokemon)
+  streamlineHtml(pokemon);
+  changeBackgroundBodyDynamically(pokemon);
 
-	setTimeout(() => {
-		pokeSearchInput.val('')
-	}, 500)
-}
+  setTimeout(() => {
+    pokeSearchInput.val("");
+  }, 500);
+};
 
-function alterarBackgroundBodyDinamicamente(pokemon) {
-	return body.attr('class', pokemon.types[0])
-}
+const changeBackgroundBodyDynamically = (pokemon) => {
+  return body.attr("class", pokemon.types[0]);
+};
 
-svgSearch.click(perquisarPokemon)
+svgSearch.click(searchPokemon);
 
-pokeSearchInput.keypress(e => {
-	if (e.keyCode === 13 || e.which === 13) {
-		perquisarPokemon()
-		return false
-	}
-})
+pokeSearchInput.keypress((e) => {
+  if (e.keyCode === 13 || e.which === 13) {
+    searchPokemon();
+    return false;
+  }
+});
 
-pokeSearchInput.on('input propertychange', () => {
-	caracteresDigitados.push(pokeSearchInput.val().trim())
-	pokeSearchInput.val() === '' ? clearButton.addClass('inline-block') : clearButton.removeClass('invisible')
-})
+pokeSearchInput.on("input propertychange", () => {
+  caracteresDigitados.push(pokeSearchInput.val().trim());
+  pokeSearchInput.val() === ""
+    ? clearButton.addClass("inline-block")
+    : clearButton.removeClass("invisible");
+});
 
 clearButton.click(() => {
-	pokeSearchInput.val('')
-	clearButton.addClass('invisible')
-	console.clear()
-})
+  pokeSearchInput.val("");
+  clearButton.addClass("invisible");
+  console.clear();
+});

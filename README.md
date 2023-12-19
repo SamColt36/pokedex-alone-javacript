@@ -1,12 +1,6 @@
-# Pokedex 
+# Pokedex Alone
 
 Este é um projeto simples de Pokedex desenvolvido usando HTML, CSS com Tailwind CSS e JavaScript. Esse projeto foi desenvolvido na tendo base na Formação JavaScript Developer da DIO (Digital Inovation One)
-
-## Status do Projeto
-
-[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-blue.svg)](https://samcolt36.github.io/consumo-api-js/)
-
-O projeto está hospedado no GitHub Pages. Você pode acessá-lo [aqui](https://samcolt36.github.io/consumo-api-js/).
 
 ## Como Executar Localmente
 
@@ -16,15 +10,15 @@ Clone este repositório via Bash.
 
 1) Se tiver o HTTPS configurado:
 ```bash
-git clone https://github.com/SamColt36/consumo-api-js.git
+git clone https://github.com/SamColt36/pokedex-alone-javacript.git
 ```
 Caso contrário, é possível pelo SSH
    ``` bash
-   git clone git@github.com:SamColt36/consumo-api-js.git
+   git clone git@github.com:SamColt36/pokedex-alone-javacript.git
    ```
 2) Navegue até o diretório do projeto:
 ``` bash
-cd 'Pokedex Alone'
+cd 'pokedex-alone-javacript'
 ```
 3) Rode o arquivo compiler.sh no terminal **bash** para gerar dinamicamente o css gerado pelo tailwindcss
 ``` bash
